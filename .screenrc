@@ -1,0 +1,35 @@
+defencoding utf-8
+escape 
+startup_message off
+autodetach on
+vbell off
+
+defbce on
+# scroll back history (default 100)
+defscrollback 100000
+
+# status line 
+hardstatus  alwayslastline "%{= rw} %H %{= wk}%-Lw%{= bw}%n%f* %h%{= wk}%+Lw %{= wk}%=%{= gw} %y/%m/%d %c "
+#caption always "%{= rw} %H %{= wk}%-Lw%{= bw}%n%f* %h%{= wk}%+Lw %{= wk}%=%{= gw} %y/%m/%d %c "
+
+shell zsh
+
+termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm:is=\E[r\E[m\E[2J\E[H\E[?7h\E[?1;4;6l'
+term xterm-256color
+
+# -
+# bindkey
+# -
+bindkey -k k1 select 0
+bindkey -k k2 select 1
+bindkey -k k3 select 2
+bindkey -k k4 select 3
+bindkey -k k5 select 4
+bindkey -k k6 select 5
+bindkey -k k7 select 6
+bindkey -k k8 select 7
+bindkey -k k9 select 8
+bindkey -k k; select 9 # F10
+bindkey -k F1 title    # F11
+bindkey -k F2 screen   # F12
+

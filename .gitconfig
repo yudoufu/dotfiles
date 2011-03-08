@@ -1,0 +1,12 @@
+[user]
+  name = Daichi Kamemoto
+  email = daikame@gmail.com
+[alias]
+  st = status
+  co = checkout
+  ci = commit
+[color]
+  status = auto
+  diff = auto
+[core]
+  pager = "lv -c"
