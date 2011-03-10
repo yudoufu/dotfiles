@@ -25,6 +25,9 @@
 "
 " vim-utility Functions and Settings
 " .vim/bundle/vimrc/plugin/util.vim
+"
+" vim Filetype Settings Dir
+" .vim/bundle/vimrc/ftplugin
 """""
 
 " Load Pathogen.
