@@ -17,8 +17,12 @@ shell zsh
 termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm:is=\E[r\E[m\E[2J\E[H\E[?7h\E[?1;4;6l'
 term xterm-256color
 
+# ignore screen lock key
+bind x xon
+bind 
+
 # -
-# bindkey
+# bind function key
 # -
 bindkey -k k1 select 0
 bindkey -k k2 select 1
