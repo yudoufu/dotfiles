@@ -21,3 +21,9 @@ plugins=(git svn)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
+umask 002
+
+autoload zmv
+alias zmv='noglob zmv -W'
+
+eval "`dircolors -b ~/.dir_colors`"
