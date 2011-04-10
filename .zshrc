@@ -23,7 +23,18 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 umask 002
 
+setopt nohup
+setopt magic_equal_subst     # コマンドラインの引数で --PREFIX=/USR などの = 以降でも補完できる
+setopt always_last_prompt    # カーソル位置は保持したままファイル名一覧を順次その場で表示
+setopt list_packed           # コンパクトに補完リストを表示
+
 autoload zmv
 alias zmv='noglob zmv -W'
 
 eval "`dircolors -b ~/.dir_colors`"
+
+alias sudo='sudo -E '
+
+# include local specific settings if exist.
+[ -f ~/.zsh_local ] && source ~/.zsh_local
+
