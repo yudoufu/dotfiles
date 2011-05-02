@@ -12,6 +12,8 @@ cd $DIR
 git pull
 git submodule init
 git submodule update
-cd vim/bundle/vim-pathogen
-git branch master
+
+# setup my vimrc files
+cd .vim/bundle
+ln -s ../vimrc
 

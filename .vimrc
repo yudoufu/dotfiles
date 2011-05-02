@@ -30,9 +30,19 @@
 " .vim/bundle/vimrc/ftplugin
 """""
 
-" Load Pathogen.
+" Load Vundle
 filetype off
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
-set helpfile=$VIMRUNTIME/doc/help.txt
+set rtp+=~/.vim/vundle/
+call vundle#rc()
+
+" Load Self Plugin
+Bundle 'vimrc'
+
+" Load Plugins
+Bundle 'tpope/vim-surround'
+Bundle 'thinca/vim-ref'
+Bundle 'Shougo/neocomplcache'
+Bundle 'Shougo/unite.vim'
+
 filetype on
+
