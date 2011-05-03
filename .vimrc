@@ -43,6 +43,8 @@ Bundle 'tpope/vim-surround'
 Bundle 'thinca/vim-ref'
 Bundle 'Shougo/neocomplcache'
 Bundle 'Shougo/unite.vim'
+Bundle 'thinca/vim-quickrun'
+Bundle 'sjl/gundo.vim'
 
 filetype on
 
