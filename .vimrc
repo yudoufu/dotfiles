@@ -38,13 +38,16 @@ call vundle#rc()
 " Load Self Plugin
 Bundle 'vimrc'
 
-" Load Plugins
+" Load Plugins on github
 Bundle 'tpope/vim-surround'
 Bundle 'thinca/vim-ref'
 Bundle 'Shougo/neocomplcache'
 Bundle 'Shougo/unite.vim'
 Bundle 'thinca/vim-quickrun'
 Bundle 'sjl/gundo.vim'
+
+" Load Plugins on vim.org
+Bundle 'SQLUtilities'
 
 filetype on
 
