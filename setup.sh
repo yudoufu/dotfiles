@@ -14,6 +14,7 @@ git submodule init
 git submodule update
 
 # setup my vimrc files
-cd .vim/bundle
+mkdir -p $DIR/.vim/bundle
+cd $DIR/.vim/bundle
 ln -s ../vimrc
 
