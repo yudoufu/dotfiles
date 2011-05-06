@@ -18,3 +18,7 @@ mkdir -p $DIR/.vim/bundle
 cd $DIR/.vim/bundle
 ln -s ../vimrc
 
+# setup oh-my-zsh theme
+cd $DIR/.oh-my-zsh/themes
+sed -e "s/\(.*foopath.*\)/#\1/" linuxonly >linuxonly.zsh-theme
+
