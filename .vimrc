@@ -45,6 +45,7 @@ Bundle 'Shougo/neocomplcache'
 Bundle 'Shougo/unite.vim'
 Bundle 'thinca/vim-quickrun'
 Bundle 'sjl/gundo.vim'
+Bundle 'kchmck/vim-coffee-script'
 
 " Load Plugins on vim.org
 Bundle 'SQLUtilities'
