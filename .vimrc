@@ -18,10 +18,10 @@
 " .vim/bundle/vimrc/plugin/syntax.vim
 "
 " Key mappign Settings
-" .vim/bundle/vimrc/plugin/map.vim
+" .vim/bundle/vimrc/plugin/mapping.vim
 "
 " Plugin Settings on vimrc file
-" .vim/bundle/vimrc/plugin/plugin.vim
+" .vim/bundle/vimrc/plugin/plugins.vim
 "
 " vim-utility Functions and Settings
 " .vim/bundle/vimrc/plugin/util.vim
