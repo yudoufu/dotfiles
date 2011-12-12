@@ -3,7 +3,7 @@ export ZSH=$HOME/.oh-my-zsh
 
 # Set to the name theme to load.
 # Look in ~/.oh-my-zsh/themes/
-export ZSH_THEME="linuxonly"
+export ZSH_THEME="random"
 
 # Set to this to use case-sensitive completion
 # export CASE_SENSITIVE="true"
@@ -33,7 +33,7 @@ alias zmv='noglob zmv -W'
 
 eval "`dircolors -b ~/.dir_colors`"
 
-alias sudo='sudo -E '
+alias sudo='PATH=/bin:/usr/bin:/sbin:/usr/sbin:/usr/local/sbin:$PATH sudo -E '
 
 # history search keybind
 #
@@ -42,9 +42,6 @@ zle -N history-beginning-search-backward-end history-search-end
 zle -N history-beginning-search-forward-end history-search-end
 bindkey "^P" history-beginning-search-backward-end
 bindkey "^N" history-beginning-search-forward-end
-
-
-
 
 
 # include local specific settings if exist.
