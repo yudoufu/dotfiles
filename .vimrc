@@ -30,27 +30,29 @@
 " .vim/bundle/vimrc/ftplugin
 """""
 
-" Load Vundle
-filetype off
-set rtp+=~/.vim/vundle/
-call vundle#rc()
+" Load neobundle
+filetype plugin indent off
+if has('vim_starting')
+    set runtimepath+=~/.vim/neobundle.vim
+    call neobundle#rc(expand('~/.vim/bundle/'))
+endif
 
 " Load Self Plugin
-Bundle 'vimrc'
+NeoBundle 'vimrc'
 
 " Load Plugins on github
-Bundle 'tpope/vim-surround'
-Bundle 'thinca/vim-ref'
-Bundle 'Shougo/neocomplcache'
-Bundle 'Shougo/unite.vim'
-Bundle 'Shougo/vimproc'
-Bundle 'Shougo/vimshell'
-Bundle 'thinca/vim-quickrun'
-Bundle 'sjl/gundo.vim'
-Bundle 'kchmck/vim-coffee-script'
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'thinca/vim-ref'
+NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/vimproc'
+NeoBundle 'Shougo/vimshell'
+NeoBundle 'thinca/vim-quickrun'
+NeoBundle 'sjl/gundo.vim'
+NeoBundle 'kchmck/vim-coffee-script'
 
 " Load Plugins on vim.org
-Bundle 'SQLUtilities'
+NeoBundle 'SQLUtilities'
 
-filetype on
+filetype plugin indent on
 

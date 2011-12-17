@@ -1,11 +1,3 @@
-
-" yankringの割り当て変更
-if has("viminfo")
-    " yankrignによるviminfoの編集の問題らしい。こうしておかないと、yankringにおこられる。
-    set vi^=!
-endif
-nmap ,y :YRShow<CR>
-
 " neocomplcache
 let g:neocomplcache_enable_at_startup = 1
 
@@ -38,4 +30,16 @@ au FileType unite inoremap <silent> <buffer> <expr> <C-l> unite#do_action('vspli
 au FileType unite nnoremap <silent> <buffer> <Esc><Esc> q
 au FileType unite inoremap <silent> <buffer> <Esc><Esc> <Esc>q
 
+
+"""""""
+"" vimshell
+"""""""
+" ,is: シェルを起動
+nnoremap <silent> ,is :VimShell<CR>
+" ,ig: goshを非同期で起動
+nnoremap <silent> ,ig :VimShellInteractive gosh<CR>
+" ,ss: 非同期で開いたインタプリタに現在の行を評価させる
+vmap <silent> ,ss :VimShellSendString<CR>
+" 選択中に,ss: 非同期で開いたインタプリタに選択行を評価させる
+nnoremap <silent> ,ss <S-v>:VimShellSendString<CR>
 

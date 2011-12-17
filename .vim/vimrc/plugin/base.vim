@@ -67,14 +67,14 @@ set shiftwidth=4
 set softtabstop=0
 
 """""
-" 編集時用設定 
+" 編集時用設定
 """""
 set helpfile=$VIMRUNTIME/doc/help.txt
 "set complete=+k 不正な文字といわれるのでコメントアウト。
 if has("autocmd")
 
-	" バッファの。。。なんかよくわからんけど追加。あとで。
-	autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9\]*://" | lcd %:p:h | endif
+  " バッファの。。。なんかよくわからんけど追加。あとで。
+  autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9\]*://" | lcd %:p:h | endif
 endif
 """""
 " vimgrep時に標準でQuickfixを使う

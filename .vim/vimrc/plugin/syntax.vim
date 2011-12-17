@@ -22,5 +22,3 @@ hi clear CursorLine
 hi CursorLine gui=underline
 hi CursorLine ctermbg=Black guibg=Black
 
-" .tファイルをPerlのテストスクリプトとして認識
-autocmd BufRead *.t set filetype=perl
