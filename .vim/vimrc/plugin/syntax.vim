@@ -13,7 +13,7 @@ hi SpecialKey ctermfg=cyan ctermbg=DarkBlue
 scriptencoding utf-8
 augroup highlightMultibyteSpace
     autocmd!
-    autocmd BufNew,BufRead * highlight MultibyteSpace term=underline ctermbg=LightGreen guibg=LingtGreen
+    autocmd BufEnter * highlight MultibyteSpace term=underline ctermbg=LightGreen guibg=LingtGreen
     autocmd VimEnter,WinEnter * match MultibyteSpace /　/
 augroup END
 
