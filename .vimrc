@@ -53,6 +53,7 @@ NeoBundle 'kchmck/vim-coffee-script'
 
 " Load Plugins on vim.org
 NeoBundle 'SQLUtilities'
+NeoBundle 'sudo.vim'
 
 filetype plugin indent on
 
