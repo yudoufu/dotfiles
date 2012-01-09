@@ -10,7 +10,7 @@ endif
 set nocompatible
 set history=999
 set encoding=utf-8
-filetype plugin on
+set nobackup
 
 """""
 " Status line Settings
@@ -76,14 +76,25 @@ if has("autocmd")
   " バッファの。。。なんかよくわからんけど追加。あとで。
   autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9\]*://" | lcd %:p:h | endif
 endif
-"""""
-" vimgrep時に標準でQuickfixを使う
-"""""
-autocmd QuickfixCmdPost vimgrep cwin
 
+" vimgrep時に標準でQuickfixを使う
+augroup VimgrepResult
+    autocmd!
+    autocmd QuickfixCmdPost vimgrep cwin
+augroup END
 
 " 検索ハイライトを消去
 nnoremap <ESC><ESC> :nohlsearch<CR><ESC>
+
+" skeletonファイルを読み込む
+augroup SkeletonLoad
+    autocmd!
+    autocmd BufNewFile *.html 0r ~/.vim/vimrc/skeleton/skeleton.html
+    autocmd BufNewFile *.php  0r ~/.vim/vimrc/skeleton/skeleton.php
+    autocmd BufNewFile *.pl   0r ~/.vim/vimrc/skeleton/skeleton.pl
+    autocmd BufNewFile *.py   0r ~/.vim/vimrc/skeleton/skeleton.py
+augroup END
+
 
 """""
 " Japanese Settins by ずんWiki
