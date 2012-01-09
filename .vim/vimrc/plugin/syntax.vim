@@ -3,20 +3,19 @@
 """""
 syntax on
 
-" 日本語の全角スペースをハイライトする(colorschemeの前に設定)
-scriptencoding utf-8
-augroup highlightMultibyteSpace
-    autocmd!
-    autocmd ColorScheme * highlight MultibyteSpace term=underline ctermbg=DarkGreen guibg=DarkGreen
-    autocmd VimEnter,WinEnter * match MultibyteSpace /　/
-augroup END
-
 " colorschemeの指定
 colorscheme desert
 
 " 行末の空白とtabをハイライト
 hi SpecialKey ctermfg=cyan ctermbg=DarkBlue
 
+" 日本語の全角スペースをハイライト
+scriptencoding utf-8
+augroup highlightMultibyteSpace
+    autocmd!
+    autocmd BufNew,BufRead * highlight MultibyteSpace term=underline ctermbg=LightGreen guibg=LingtGreen
+    autocmd VimEnter,WinEnter * match MultibyteSpace /　/
+augroup END
 
 " カーソル行のハイライト
 "set cursorline
