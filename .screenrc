@@ -8,7 +8,7 @@ defbce on
 # scroll back history (default 100)
 defscrollback 100000
 
-# status line 
+# status line
 hardstatus  alwayslastline "%{= rw} %H %{= wk}%-Lw%{= bw}%n%f* %h%{= wk}%+Lw %{= wk}%=%{= gw} %y/%m/%d %c "
 #caption always "%{= rw} %H %{= wk}%-Lw%{= bw}%n%f* %h%{= wk}%+Lw %{= wk}%=%{= gw} %y/%m/%d %c "
 

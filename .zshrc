@@ -31,8 +31,6 @@ setopt list_packed           # コンパクトに補完リストを表示
 autoload zmv
 alias zmv='noglob zmv -W'
 
-eval "`dircolors -b ~/.dir_colors`"
-
 alias sudo='PATH=/bin:/usr/bin:/sbin:/usr/sbin:/usr/local/sbin:$PATH sudo -E '
 
 # history search keybind
