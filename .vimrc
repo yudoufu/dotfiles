@@ -50,6 +50,7 @@ NeoBundle 'Shougo/vimshell'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'sjl/gundo.vim'
 NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'heavenshell/vim-quickrun-hook-unittest'
 
 " Load Plugins on vim.org
 NeoBundle 'SQLUtilities'
