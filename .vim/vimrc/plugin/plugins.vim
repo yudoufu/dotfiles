@@ -67,3 +67,21 @@ augroup QuickRunUnitTest
   autocmd BufWinEnter,BufNewFile *.t setlocal filetype=perl.unit
   autocmd BufWinEnter,BufNewFile *_spec.rb setlocal filetype=ruby.rspec
 augroup END
+
+"""""""
+"" vim-latex
+"""""""
+
+"augroup VimLatex
+"autocmd!
+"autocmd BufWinEnter,BufNewFile *.tex,*.latex,*.sty,*.dtx,*.ltx,*.bbl setlocal filetype=tex
+"augroup END
+
+let g:tex_flavor = 'latex'
+let g:Tex_DefaultTargetFormat = 'pdf'
+let g:Tex_ViewRule_pdf = 'open -a Preview.app'
+"let g:Tex_CompileRule_pdf = 'pdflatex $*.tex'
+let g:Tex_CompileRule_dvi = 'platex --interaction=nonstopmode $*'
+let g:Tex_CompileRule_pdf = 'dvipdfmx $*.dvi'
+let g:Tex_FormatDependency_pdf = 'dvi,pdf'
+

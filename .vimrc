@@ -51,10 +51,14 @@ NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'sjl/gundo.vim'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'heavenshell/vim-quickrun-hook-unittest'
+NeoBundle 'kana/vim-vspec'
 
 " Load Plugins on vim.org
 NeoBundle 'SQLUtilities'
 NeoBundle 'sudo.vim'
+
+" Load Plugins on other sites
+NeoBundle 'git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex'
 
 filetype plugin indent on
 
