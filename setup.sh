@@ -11,8 +11,8 @@ done
 echo "Update git Submodules."
 cd $DIR
 git pull
-git submodule init
-git submodule update
+git submodule update --init
+git submodule foreach 'git checkout master; git pull'
 
 # setup my vimrc files
 BUNDLE_DIR=$DIR/.vim/bundle
