@@ -68,6 +68,7 @@ augroup QuickRunUnitTest
   autocmd BufWinEnter,BufNewFile *_spec.rb setlocal filetype=ruby.rspec
 augroup END
 
+
 """""""
 "" vim-latex
 """""""

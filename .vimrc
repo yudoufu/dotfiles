@@ -41,17 +41,25 @@ endif
 NeoBundle 'vimrc'
 
 " Load Plugins on github
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'thinca/vim-ref'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/vimproc'
+NeoBundle 'Shougo/vimproc', {
+\ 'build' : {
+\     'windows' : 'echo "Sorry, cannot update vimproc binary file in Windows."',
+\     'cygwin' : 'make -f make_cygwin.mak',
+\     'mac' : 'make -f make_mac.mak',
+\     'unix' : 'make -f make_unix.mak',
+\   },
+\ }
 NeoBundle 'Shougo/vimshell'
+NeoBundle 'thinca/vim-ref'
 NeoBundle 'thinca/vim-quickrun'
+NeoBundle 'kana/vim-vspec'
+NeoBundle 'kana/vim-smartinput'
+NeoBundle 'tpope/vim-surround'
 NeoBundle 'sjl/gundo.vim'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'heavenshell/vim-quickrun-hook-unittest'
-NeoBundle 'kana/vim-vspec'
 
 " Load Plugins on vim.org
 NeoBundle 'SQLUtilities'
