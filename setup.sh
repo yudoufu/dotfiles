@@ -4,7 +4,7 @@
 DIR=$(cd $(dirname $0);pwd)
 for FILE in `ls -A --ignore='*' --ignore='.svn' --ignore='.git' --ignore='.gitignore' $DIR`
 do
-  ln -ivs $DIR/$FILE ~
+  ln -fvs $DIR/$FILE ~
 done
 
 # setup git submodule plugins
