@@ -38,7 +38,7 @@ if has('vim_starting')
 endif
 
 " Load Self Plugin
-NeoBundle 'vimrc'
+NeoBundle 'vimrc', {'type': 'nosync'}
 
 " Load Plugins on github
 NeoBundle 'Shougo/neocomplcache'
