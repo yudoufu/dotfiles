@@ -28,8 +28,8 @@ fi
 vim -Nes -u $DIR/.vimrc -i NONE -V1 -c NeoBundleInstall! -c qall!
 
 # setup oh-my-zsh theme bugfix
-if [ ! -f $DIR/.oh-my-zsh/themes/linuxonly.zsh-theme ]; then
-    cd $DIR/.oh-my-zsh/themes
-    echo "Fix oh-my-zsh's linuxonly theme And Craete linuxonly.zsh-theme."
-    sed -e "s/\(.*foopath.*\)/#\1/" linuxonly >linuxonly.zsh-theme
-fi
+#if [ ! -f $DIR/.oh-my-zsh/themes/linuxonly.zsh-theme ]; then
+#    cd $DIR/.oh-my-zsh/themes
+#    echo "Fix oh-my-zsh's linuxonly theme And Craete linuxonly.zsh-theme."
+#    sed -e "s/\(.*foopath.*\)/#\1/" linuxonly >linuxonly.zsh-theme
+#fi
