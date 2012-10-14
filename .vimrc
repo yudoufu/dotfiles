@@ -60,6 +60,7 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'sjl/gundo.vim'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'heavenshell/vim-quickrun-hook-unittest'
+NeoBundle 'nvie/vim-flake8'
 
 " Load Plugins on vim.org
 NeoBundle 'SQLUtilities'

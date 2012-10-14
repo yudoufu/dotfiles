@@ -93,6 +93,7 @@ augroup SkeletonLoad
     autocmd BufNewFile *.php  0r ~/.vim/vimrc/skeleton/skeleton.php
     autocmd BufNewFile *.pl   0r ~/.vim/vimrc/skeleton/skeleton.pl
     autocmd BufNewFile *.py   0r ~/.vim/vimrc/skeleton/skeleton.py
+    autocmd BufNewFile *.js   0r ~/.vim/vimrc/skeleton/skeleton.js
 augroup END
 
 
