@@ -33,7 +33,7 @@ setopt list_packed           # コンパクトに補完リストを表示
 autoload zmv
 alias zmv='noglob zmv -W'
 
-if [ `lsb_release -si` -eq 'Debian' ]; then
+if [ `lsb_release -si` = 'Debian' ]; then
     alias sudo='PATH=/bin:/usr/bin:/sbin:/usr/sbin:/usr/local/sbin:$PATH sudo -E '
 fi
 
