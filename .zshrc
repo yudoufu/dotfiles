@@ -3,8 +3,9 @@ export ZSH=$HOME/.oh-my-zsh
 
 # Set to the name theme to load.
 # Look in ~/.oh-my-zsh/themes/
-export ZSH_THEME="dstufft"
+#export ZSH_THEME="dstufft"
 #export ZSH_THEME="random"
+export ZSH_THEME="lukerandall"
 
 # Set to this to use case-sensitive completion
 # export CASE_SENSITIVE="true"
@@ -32,7 +33,7 @@ setopt list_packed           # コンパクトに補完リストを表示
 autoload zmv
 alias zmv='noglob zmv -W'
 
-alias sudo='PATH=/bin:/usr/bin:/sbin:/usr/sbin:/usr/local/sbin:$PATH sudo -E '
+#alias sudo='PATH=/bin:/usr/bin:/sbin:/usr/sbin:/usr/local/sbin:$PATH sudo -E '
 
 # history search keybind
 #
