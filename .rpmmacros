@@ -1,1 +1,1 @@
-%_topdir %{getenv:HOME}/rpmbuild
+%_topdir %{getenv:HOME}/tmp/rpmbuild
