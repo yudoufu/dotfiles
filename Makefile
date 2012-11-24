@@ -1,3 +1,4 @@
+PLATFORM=$(shell uname)
 
 all: symlink git-update vim-plugin
 
@@ -16,6 +17,10 @@ git-update:
 BUNDLE_DIR=$(CURDIR)/.vim/bundle
 vim-plugin:
 	mkdir -p $(BUNDLE_DIR)
-	ln -fvs -t $(BUNDLE_DIR)/ ../vimrc
+	ln -fvs ../vimrc $(BUNDLE_DIR)/
+ifeq ($(PLATFORM), Darwin)
+	vim -Nes -u $(CURDIR)/.vimrc -i NONE -V1 -c NeoBundleInstall! -c qall! ; /usr/bin/true
+else
 	vim -Nes -u $(CURDIR)/.vimrc -i NONE -V1 -c NeoBundleInstall! -c qall! ; /bin/true
+endif
 
