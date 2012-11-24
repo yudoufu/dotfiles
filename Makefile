@@ -2,10 +2,18 @@ PREFIX=$(HOME)
 PLATFORM=$(shell uname)
 
 LOCAL_PROFILE=$(PREFIX)/.zsh_local
+
+LANGENV=nvm pyenv perlbrew
 NVM_PATH=$(PREFIX)/.nvm
 PYENV_PATH=$(PREFIX)/.pyenv
 PYENV_VENV_PATH=$(PYENV_PATH)/plugins/python-virtualenv
 
+PROCESSERS=node perl python
+NODE_VERSION=0.8.14
+PYTHON_VERSION=2.7.3
+PERL_VERSION=5.16.2
+
+world: all setup
 
 all: symlink git-update vim-plugin
 
@@ -31,8 +39,14 @@ else
 	vim -Nes -u $(CURDIR)/.vimrc -i NONE -V1 -c NeoBundleInstall! -c qall! ; /bin/true
 endif
 
-UPDATES=nvm pyenv perlbrew
-update: $(foreach target, $(UPDATES), $(target)-update)
+update: $(foreach target, $(LANGENV), $(target)-update)
+
+setup: $(foreach target, $(LANGENV), $(target)-install) $(PROCESSERS)
+
+node:
+	nvm install v$(NODE_VERSION)
+	nvm use v$(NODE_VERSION)
+	nvm alias default v$(NODE_VERSION)
 
 nvm-update:
 	cd $(NVM_PATH);\
@@ -41,6 +55,9 @@ nvm-update:
 nvm-install:
 	git clone git://github.com/creationix/nvm.git $(NVM_PATH)
 	echo 'source $(NVM_PATH)/nvm.sh' >> $(LOCAL_PROFILE)
+
+python:
+	pyenv install $(PYTHON_VERSION)
 
 pyenv-update:
 	cd $(PYENV_PATH);\
@@ -53,6 +70,9 @@ pyenv-install:
 	git clone git://github.com/yyuu/python-virtualenv.git $(PYENV_VENV_PATH)
 	echo 'export PATH="$(PYENV_PATH)/bin:$$PATH"' >> $(LOCAL_PROFILE)
 	echo 'eval "$$(pyenv init -)"' >> $(LOCAL_PROFILE)
+
+perl:
+	perlbrew install perl-$(PERL_VERSION)
 
 perlbrew-update:
 	perlbrew self-upgrade
