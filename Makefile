@@ -13,9 +13,9 @@ NODE_VERSION=0.8.14
 PYTHON_VERSION=2.7.3
 PERL_VERSION=5.16.2
 
-world: all setup
-
 all: symlink git-update vim-plugin
+
+world: all setup
 
 NOLINK=. .. .svn .git .gitignore
 symlink: $(foreach target, $(filter-out $(NOLINK), $(wildcard .*)), set-symlink-$(target))
