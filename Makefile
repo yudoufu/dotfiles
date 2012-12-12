@@ -1,4 +1,4 @@
-PREFIX=$(HOME)
+PREFIX?=$(HOME)
 PLATFORM=$(shell uname)
 
 LOCAL_PROFILE=$(PREFIX)/.zsh_local
@@ -7,15 +7,16 @@ LANGENV=nvm pyenv perlbrew
 NVM_PATH=$(PREFIX)/.nvm
 PYENV_PATH=$(PREFIX)/.pyenv
 PYENV_VENV_PATH=$(PYENV_PATH)/plugins/python-virtualenv
+PERLBREW_PATH=$(PREFIX)/perl5/perlbrew
 
 PROCESSERS=node perl python
 NODE_VERSION=0.8.14
 PYTHON_VERSION=2.7.3
 PERL_VERSION=5.16.2
 
-world: all setup
-
 all: symlink git-update vim-plugin
+
+world: all setup
 
 NOLINK=. .. .svn .git .gitignore
 symlink: $(foreach target, $(filter-out $(NOLINK), $(wildcard .*)), set-symlink-$(target))
@@ -78,6 +79,6 @@ perlbrew-update:
 	perlbrew self-upgrade
 
 perlbrew-install:
-	curl -kL http://install.perlbrew.pl | bash
-	echo 'source ~/perl5/perlbrew/etc/bashrc' >> $(LOCAL_PROFILE)
+	curl -kL http://install.perlbrew.pl | PERLBREW_ROOT=$(PERLBREW_PATH) bash
+	echo 'source $(PERLBREW_PATH)/etc/bashrc' >> $(LOCAL_PROFILE)
 
