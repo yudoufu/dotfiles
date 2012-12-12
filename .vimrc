@@ -2,7 +2,7 @@
 " .vimrc
 "
 " Maintainer:   Daichi Kamemoto (a.k.a:yudoufu) <daikame@gmail.com>
-" Last Change:  2011/02/21
+" Last Change:  2012/12/12
 " Version:      0.0.9
 "
 " customized vim settings
