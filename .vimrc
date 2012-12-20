@@ -52,6 +52,7 @@ NeoBundle 'Shougo/vimproc', {
 \   },
 \ }
 NeoBundle 'Shougo/vimshell'
+NeoBundle 'Shougo/neosnippet'
 NeoBundle 'thinca/vim-ref'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'kana/vim-vspec'
@@ -61,6 +62,7 @@ NeoBundle 'sjl/gundo.vim'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'heavenshell/vim-quickrun-hook-unittest'
 NeoBundle 'nvie/vim-flake8'
+NeoBundle 'vim-perl/vim-perl'
 
 " Load Plugins on vim.org
 NeoBundle 'SQLUtilities'

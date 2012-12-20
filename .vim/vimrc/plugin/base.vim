@@ -92,6 +92,7 @@ augroup SkeletonLoad
     autocmd BufNewFile *.html 0r ~/.vim/vimrc/skeleton/skeleton.html
     autocmd BufNewFile *.php  0r ~/.vim/vimrc/skeleton/skeleton.php
     autocmd BufNewFile *.pl   0r ~/.vim/vimrc/skeleton/skeleton.pl
+    autocmd BufNewFile *.t    0r ~/.vim/vimrc/skeleton/skeleton.pl.t
     autocmd BufNewFile *.py   0r ~/.vim/vimrc/skeleton/skeleton.py
     autocmd BufNewFile *.js   0r ~/.vim/vimrc/skeleton/skeleton.js
 augroup END
@@ -167,7 +168,4 @@ set fileformats=unix,dos,mac
 if exists('&ambiwidth')
   set ambiwidth=double
 endif
-
-
-
 

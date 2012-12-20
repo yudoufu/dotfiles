@@ -1,5 +1,9 @@
- setlocal iskeyword+=:
- noremap K :Perldoc<CR>
+setlocal iskeyword+=:
+noremap K :Perldoc<CR>
 
 " .tファイルをPerlのテストスクリプトとして認識
-autocmd BufRead *.t set filetype=perl
+augroup PerlFileTypeDetect
+    autocmd! BufNewFile,BufRead *.t setf perl
+    autocmd! BufNewFile,BufRead *.psgi setf perl
+    autocmd! BufNewFile,BufRead *.tt setf tt2html
+augroup END
