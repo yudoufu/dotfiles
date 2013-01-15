@@ -63,6 +63,7 @@ NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'heavenshell/vim-quickrun-hook-unittest'
 NeoBundle 'nvie/vim-flake8'
 NeoBundle 'vim-perl/vim-perl'
+NeoBundle 'tpope/vim-fugitive'
 
 " Load Plugins on vim.org
 NeoBundle 'SQLUtilities'
