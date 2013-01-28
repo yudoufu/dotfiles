@@ -10,6 +10,7 @@ PYENV_VENV_PATH=$(PYENV_PATH)/plugins/python-virtualenv
 RBENV_PATH=$(PREFIX)/.rbenv
 RBENV_BUILD_PATH=$(RBENV_PATH)/plugins/ruby-build
 PERLBREW_PATH=$(PREFIX)/perl5/perlbrew
+PLENV_PATH=$(PREFIX)/.plenv
 
 PROCESSERS=node ruby python perl
 NODE_VERSION=0.8.14
@@ -101,6 +102,17 @@ perlbrew-update:
 perlbrew-install:
 	curl -kL http://install.perlbrew.pl | PERLBREW_ROOT=$(PERLBREW_PATH) bash
 	echo 'source $(PERLBREW_PATH)/etc/bashrc' >> $(LOCAL_PROFILE)
+
+plenv-update:
+	cd $(PLENV_PATH);\
+		git pull
+
+plenv-install:
+	git clone git://github.com/tokuhirom/plenv.git $(PLENV_PATH)
+	echo 'export PATH="$(PLENV_PATH)/bin:$$PATH"' >> $(LOCAL_PROFILE)
+	echo 'eval "$$(plenv init -)"' >> $(LOCAL_PROFILE)
+
+
 
 otherenv:
 	echo 'export MAKEOPTS="-j $(shell expr `cat /proc/cpuinfo |grep processor |wc -l` + 2)"' >> $(LOCAL_PROFILE)
