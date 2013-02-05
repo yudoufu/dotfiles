@@ -1,7 +1,13 @@
 #!/bin/sh
+set -e
 
 usage() {
+    echo "USAGE: `basename $0` [Options]"
     echo ""
+    echo "Required:"
+    echo ""
+    echo "Options:"
+    echo "  -h, --help          ヘルプを表示する"
     exit 1;
 }
 
