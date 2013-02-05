@@ -8,6 +8,7 @@ usage() {
     echo ""
     echo "Options:"
     echo "  -h, --help          show this help."
+    echo "  --dry               dry run mode."
     exit 1;
 }
 
@@ -29,6 +30,9 @@ main() {
     if [ $is_dry ];then
         echo "dry run..."
     fi
+
+    # implement here. #
+
 }
 
 ## utility
