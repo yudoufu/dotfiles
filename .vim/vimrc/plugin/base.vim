@@ -95,6 +95,7 @@ augroup SkeletonLoad
     autocmd BufNewFile *.t    0r ~/.vim/vimrc/skeleton/skeleton.pl.t
     autocmd BufNewFile *.py   0r ~/.vim/vimrc/skeleton/skeleton.py
     autocmd BufNewFile *.js   0r ~/.vim/vimrc/skeleton/skeleton.js
+    autocmd BufNewFile *.sh   0r ~/.vim/vimrc/skeleton/skeleton.sh
 augroup END
 
 " directory auto create.
