@@ -7,7 +7,7 @@ usage() {
     echo "Required:"
     echo ""
     echo "Options:"
-    echo "  -h, --help          ヘルプを表示する"
+    echo "  -h, --help          show this help."
     exit 1;
 }
 
