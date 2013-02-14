@@ -36,6 +36,15 @@ main() {
 }
 
 ## utility
+execute() {
+    if [ $is_dry ]; then
+        echo "[dry run] $1"
+    else
+        echo "[run] $1"
+        eval $1
+    fi
+}
+
 red() {
     echo "[1;31m$1[0m"
 }
@@ -49,15 +58,15 @@ green() {
 }
 
 fatal() {
-    red "$1"
+    red "[fatal] $1"
 }
 
 warn() {
-    yellow "$1"
+    yellow "[warn] $1"
 }
 
 info() {
-    green "$1"
+    green "[info] $1"
 }
 
 # call main.
