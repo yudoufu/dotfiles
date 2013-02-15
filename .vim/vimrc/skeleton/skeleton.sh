@@ -14,7 +14,7 @@ usage() {
 
 main() {
     script_dir=$(cd $(dirname $0); pwd)
-    opts=`getopt -o ho: -l help,option:, -- "$@"`
+    opts=`getopt -o ho: -l help,option:,dry, -- "$@"`
     eval set -- "$opts"
     while [ -n "$1" ]; do
         case $1 in
@@ -28,7 +28,7 @@ main() {
     done
 
     if [ $is_dry ];then
-        echo "dry run..."
+        info "dry run..."
     fi
 
     # implement here. #
@@ -38,35 +38,38 @@ main() {
 ## utility
 execute() {
     if [ $is_dry ]; then
-        echo "[dry run] $1"
+        echo "[dry run] $@"
     else
-        echo "[run] $1"
-        eval $1
+        echo "[run] $@"
+        eval $@
     fi
 }
 
 red() {
-    echo "[1;31m$1[0m"
+    echo -n "[1;31m$1[0m"
 }
 
 yellow() {
-    echo "[1;33m$1[0m"
+    echo -n "[1;33m$1[0m"
 }
 
 green() {
-    echo "[1;32m$1[0m"
+    echo -n "[1;32m$1[0m"
 }
 
 fatal() {
-    red "[fatal] $1"
+    red "[fatal] "
+    echo "$1"
 }
 
 warn() {
-    yellow "[warn] $1"
+    yellow "[warn] "
+    echo "$1"
 }
 
 info() {
-    green "[info] $1"
+    green "[info] "
+    echo "$1"
 }
 
 # call main.
