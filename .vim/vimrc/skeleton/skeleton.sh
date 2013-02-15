@@ -41,7 +41,7 @@ run() {
         echo "[dry run] $@"
     else
         echo "[run] $@"
-        eval $@
+        "$@"
     fi
 }
 
