@@ -36,7 +36,7 @@ main() {
 }
 
 ## utility
-execute() {
+run() {
     if [ $is_dry ]; then
         echo "[dry run] $@"
     else
