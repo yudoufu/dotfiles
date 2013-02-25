@@ -65,6 +65,9 @@ NeoBundle 'nvie/vim-flake8'
 NeoBundle 'vim-perl/vim-perl'
 NeoBundle 'tpope/vim-fugitive'
 
+"" color schema
+NeoBundle 'w0ng/vim-hybrid'
+
 " Load Plugins on vim.org
 NeoBundle 'SQLUtilities'
 NeoBundle 'sudo.vim'

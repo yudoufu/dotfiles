@@ -4,7 +4,8 @@
 syntax on
 
 " colorschemeの指定
-colorscheme desert
+"colorscheme desert
+colorscheme hybrid
 
 " 行末の空白とtabをハイライト
 hi SpecialKey ctermfg=cyan ctermbg=DarkBlue
