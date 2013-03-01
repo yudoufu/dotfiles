@@ -5,7 +5,8 @@ syntax on
 
 " colorschemeの指定
 "colorscheme desert
-colorscheme hybrid
+"colorscheme hybrid
+colorscheme railscasts
 
 " 行末の空白とtabをハイライト
 hi SpecialKey ctermfg=cyan ctermbg=DarkBlue

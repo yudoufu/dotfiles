@@ -56,7 +56,7 @@ NeoBundle 'Shougo/neosnippet'
 NeoBundle 'thinca/vim-ref'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'kana/vim-vspec'
-NeoBundle 'kana/vim-smartinput'
+"NeoBundle 'kana/vim-smartinput'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tpope/vim-markdown'
@@ -65,9 +65,11 @@ NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'heavenshell/vim-quickrun-hook-unittest'
 NeoBundle 'nvie/vim-flake8'
 NeoBundle 'vim-perl/vim-perl'
+NeoBundle 'mileszs/ack.vim'
 
 "" color schema
 NeoBundle 'w0ng/vim-hybrid'
+NeoBundle 'jpo/vim-railscasts-theme'
 
 " Load Plugins on vim.org
 NeoBundle 'SQLUtilities'
