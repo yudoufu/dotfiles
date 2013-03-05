@@ -21,7 +21,7 @@ main() {
             -h|--help) usage;;
             -o|--option) option=$2; shift;;
             --dry) is_dry=1;;
-            --) break;;
+            --) shift; break;;
             *) usage;;
         esac
         shift
