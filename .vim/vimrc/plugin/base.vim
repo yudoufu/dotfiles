@@ -71,6 +71,8 @@ set softtabstop=0
 " filetype Settings
 """""
 autocmd BufRead,BufNewFile *.md setfiletype markdown
+autocmd BufRead,BufNewFile Berksfile setfiletype ruby
+autocmd BufRead,BufNewFile Vagrantfile setfiletype ruby
 
 """""
 " 編集時用設定
