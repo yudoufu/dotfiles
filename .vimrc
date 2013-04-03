@@ -30,6 +30,8 @@
 " .vim/bundle/vimrc/ftplugin
 """""
 
+let s:nosudo = $SUDO_USER == ''
+
 " Load neobundle
 filetype plugin indent off
 if has('vim_starting')
@@ -41,8 +43,11 @@ endif
 NeoBundle 'vimrc', {'type': 'nosync'}
 
 " Load Plugins on github
-NeoBundle 'Shougo/neocomplcache'
-NeoBundle 'Shougo/unite.vim'
+if s:nosudo
+    NeoBundle 'Shougo/neocomplcache'
+    NeoBundle 'Shougo/unite.vim'
+    NeoBundle 'Shougo/vimshell'
+endif
 NeoBundle 'Shougo/vimproc', {
 \ 'build' : {
 \     'windows' : 'echo "Sorry, cannot update vimproc binary file in Windows."',
@@ -51,7 +56,6 @@ NeoBundle 'Shougo/vimproc', {
 \     'unix' : 'make -f make_unix.mak',
 \   },
 \ }
-NeoBundle 'Shougo/vimshell'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'thinca/vim-ref'
 NeoBundle 'thinca/vim-quickrun'
@@ -73,7 +77,9 @@ NeoBundle 'jpo/vim-railscasts-theme'
 
 " Load Plugins on vim.org
 NeoBundle 'SQLUtilities'
-NeoBundle 'sudo.vim'
+if s:nosudo
+    NeoBundle 'sudo.vim'
+endif
 
 " Load Plugins on other sites
 NeoBundle 'git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex'
