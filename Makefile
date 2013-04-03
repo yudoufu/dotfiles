@@ -3,7 +3,7 @@ PLATFORM=$(shell uname)
 
 LOCAL_PROFILE=$(PREFIX)/.zsh_local
 
-LANGENV=nvm pyenv rbenv perlbrew
+LANGENV=nvm pyenv rbenv plenv
 NVM_PATH=$(PREFIX)/.nvm
 PYENV_PATH=$(PREFIX)/.pyenv
 PYENV_VENV_PATH=$(PYENV_PATH)/plugins/python-virtualenv

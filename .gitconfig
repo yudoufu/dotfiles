@@ -9,7 +9,7 @@
   status = auto
   diff = auto
 [core]
-  pager = "lv -c"
+  pager = "less -R"
 	excludesfile = /Users/daichi/.gitignore_global
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
