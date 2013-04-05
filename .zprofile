@@ -1,4 +1,5 @@
 
+# original idea: http://www.gcd.org/blog/2006/09/100/
 liveagent() {
     agent="$HOME/.ssh-agent-$USER"
     if [ -S "$SSH_AUTH_SOCK" ]; then
