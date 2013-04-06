@@ -9,11 +9,10 @@ PYENV_PATH=$(PREFIX)/.pyenv
 PYENV_VENV_PATH=$(PYENV_PATH)/plugins/python-virtualenv
 RBENV_PATH=$(PREFIX)/.rbenv
 RBENV_BUILD_PATH=$(RBENV_PATH)/plugins/ruby-build
-PERLBREW_PATH=$(PREFIX)/perl5/perlbrew
 PLENV_PATH=$(PREFIX)/.plenv
 
 PROCESSERS=node ruby python perl
-NODE_VERSION=0.8.14
+NODE_VERSION=0.10.2
 PYTHON_VERSION=2.7.3
 RUBY_VERSION=1.9.3-p362
 PERL_VERSION=5.16.2
@@ -46,7 +45,11 @@ endif
 
 update: $(foreach target, $(LANGENV), $(target)-update)
 
-setup: otherenv $(foreach target, $(LANGENV), $(target)-install) $(PROCESSERS)
+setup: otherenv langenv lang
+
+langenv: $(foreach target, $(LANGENV), $(target)-install)
+
+lang: $(PROCESSERS)
 
 node:
 	nvm install v$(NODE_VERSION)
@@ -63,6 +66,8 @@ nvm-install:
 
 python:
 	pyenv install $(PYTHON_VERSION)
+	cd $(PREFIX); pyenv local $(PYTHON_VERSION)
+	pyenv rehash
 
 pyenv-update:
 	cd $(PYENV_PATH);\
@@ -78,6 +83,7 @@ pyenv-install:
 
 ruby:
 	rbenv install $(RUBY_VERSION)
+	cd $(PREFIX); rbenv local $(RUBY_VERSION)
 	rbenv exec gem install bundler --no-ri --no-rdoc
 	rbenv rehash
 
@@ -94,14 +100,10 @@ rbenv-install:
 	echo 'eval "$$(rbenv init -)"' >> $(LOCAL_PROFILE)
 
 perl:
-	perlbrew install perl-$(PERL_VERSION)
-
-perlbrew-update:
-	perlbrew self-upgrade
-
-perlbrew-install:
-	curl -kL http://install.perlbrew.pl | PERLBREW_ROOT=$(PERLBREW_PATH) bash
-	echo 'source $(PERLBREW_PATH)/etc/bashrc' >> $(LOCAL_PROFILE)
+	plenv install $(PERL_VERSION)
+	cd $(PREFIX); plenv local $(PERL_VERSION)
+	plenv install-cpanm
+	plenv rehash
 
 plenv-update:
 	cd $(PLENV_PATH);\
@@ -111,8 +113,6 @@ plenv-install:
 	git clone git://github.com/tokuhirom/plenv.git $(PLENV_PATH)
 	echo 'export PATH="$(PLENV_PATH)/bin:$$PATH"' >> $(LOCAL_PROFILE)
 	echo 'eval "$$(plenv init -)"' >> $(LOCAL_PROFILE)
-
-
 
 otherenv:
 	echo 'export MAKEOPTS="-j $(shell expr `cat /proc/cpuinfo |grep processor |wc -l` + 2)"' >> $(LOCAL_PROFILE)
