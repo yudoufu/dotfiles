@@ -76,6 +76,7 @@ NeoBundle 'w0ng/vim-hybrid'
 NeoBundle 'jpo/vim-railscasts-theme'
 
 " Load Plugins on vim.org
+NeoBundle 'django.vim'
 NeoBundle 'SQLUtilities'
 if s:nosudo
     NeoBundle 'sudo.vim'

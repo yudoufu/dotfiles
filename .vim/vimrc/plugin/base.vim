@@ -73,6 +73,7 @@ set softtabstop=0
 autocmd BufRead,BufNewFile *.md setfiletype markdown
 autocmd BufRead,BufNewFile Berksfile setfiletype ruby
 autocmd BufRead,BufNewFile Vagrantfile setfiletype ruby
+autocmd BufNewFile,BufRead *.twig setfiletype htmljinja
 
 """""
 " 編集時用設定
