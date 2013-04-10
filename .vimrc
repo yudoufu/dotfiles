@@ -70,6 +70,8 @@ NeoBundle 'heavenshell/vim-quickrun-hook-unittest'
 NeoBundle 'nvie/vim-flake8'
 NeoBundle 'vim-perl/vim-perl'
 NeoBundle 'mileszs/ack.vim'
+NeoBundle 'groenewege/vim-less'
+NeoBundle 'pangloss/vim-javascript'
 
 "" color schema
 NeoBundle 'w0ng/vim-hybrid'
