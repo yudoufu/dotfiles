@@ -72,6 +72,7 @@ NeoBundle 'vim-perl/vim-perl'
 NeoBundle 'mileszs/ack.vim'
 NeoBundle 'groenewege/vim-less'
 NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'StanAngeloff/php.vim'
 
 "" color schema
 NeoBundle 'w0ng/vim-hybrid'
