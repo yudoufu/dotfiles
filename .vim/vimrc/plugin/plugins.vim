@@ -1,6 +1,16 @@
 " neocomplcache
 let g:neocomplcache_enable_at_startup = 1
 
+" _(アンダースコア)区切りの補完を有効化
+let g:neocomplcache_enable_underbar_completion = 1
+let g:neocomplcache_enable_camel_case_completion  =  1
+
+" 改行で補完ウィンドウを閉じる
+inoremap <expr><CR> neocomplcache#smart_close_popup() . "\<CR>"
+
+" tabで補完候補の選択を行う
+inoremap <expr><TAB> pumvisible() ? "\<Down>" : "\<TAB>"
+inoremap <expr><S-TAB> pumvisible() ? "\<Up>" : "\<S-TAB>"
 
 """"""""""
 "" unite.vim
