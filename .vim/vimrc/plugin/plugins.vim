@@ -1,6 +1,12 @@
 " neocomplcache
 let g:neocomplcache_enable_at_startup = 1
 
+"自動補完を行う入力数を設定。初期値は2
+let g:neocomplcache_auto_completion_start_length = 4
+
+" ポップアップメニューで表示される候補の数。初期値は100
+let g:neocomplcache_max_list = 20
+
 " _(アンダースコア)区切りの補完を有効化
 let g:neocomplcache_enable_underbar_completion = 1
 let g:neocomplcache_enable_camel_case_completion  =  1
@@ -11,6 +17,16 @@ inoremap <expr><CR> neocomplcache#smart_close_popup() . "\<CR>"
 " tabで補完候補の選択を行う
 inoremap <expr><TAB> pumvisible() ? "\<Down>" : "\<TAB>"
 inoremap <expr><S-TAB> pumvisible() ? "\<Up>" : "\<S-TAB>"
+
+"キャッシュディレクトリの場所
+"RamDiskをキャッシュディレクトリに設定
+if has('win32')
+  let g:neocomplcache_temporary_dir = 'E:/.yd-neocon'
+elseif has('macunix')
+  let g:neocomplcache_temporary_dir = '/Volumes/RamDisk/.yd-neocon'
+else
+  let g:neocomplcache_temporary_dir = '/dev/shm/.yd-neocon'
+endif 
 
 """"""""""
 "" unite.vim
