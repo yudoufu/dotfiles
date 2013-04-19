@@ -17,9 +17,12 @@ PYTHON_VERSION=2.7.4
 RUBY_VERSION=1.9.3-p362
 PERL_VERSION=5.16.2
 
-all: symlink git-update vim-plugin
+all: self-update symlink git-update vim-plugin
 
 world: all setup
+
+self-update:
+	git pull
 
 NOLINK=. .. .svn .git .gitignore
 symlink: $(foreach target, $(filter-out $(NOLINK), $(wildcard .*)), set-symlink-$(target))
