@@ -18,19 +18,6 @@ inoremap <expr><CR> neocomplcache#smart_close_popup() . "\<CR>"
 inoremap <expr><TAB> pumvisible() ? "\<Down>" : "\<TAB>"
 inoremap <expr><S-TAB> pumvisible() ? "\<Up>" : "\<S-TAB>"
 
-"キャッシュディレクトリの場所
-"RamDiskをキャッシュディレクトリに設定
-if has('win32')
-  let g:neocomplcache_temporary_dir = 'E:/.yd-neocon'
-else
-  let os=substitute(system('uname'), '\n', '', '')
-  if os == 'Linux'
-    let g:neocomplcache_temporary_dir = '/dev/shm/.yd-neocon'
-"  elseif os == 'Darwin' || os == 'Mac' || has('macunix')
-"    let g:neocomplcache_temporary_dir = '/Volumes/RamDisk/.yd-neocon'
-  endif
-endif
-
 """"""""""
 "" unite.vim
 """"""""""
