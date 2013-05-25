@@ -22,11 +22,14 @@ inoremap <expr><S-TAB> pumvisible() ? "\<Up>" : "\<S-TAB>"
 "RamDiskをキャッシュディレクトリに設定
 if has('win32')
   let g:neocomplcache_temporary_dir = 'E:/.yd-neocon'
-elseif has('macunix')
-  let g:neocomplcache_temporary_dir = '/Volumes/RamDisk/.yd-neocon'
 else
-  let g:neocomplcache_temporary_dir = '/dev/shm/.yd-neocon'
-endif 
+  let os=substitute(system('uname'), '\n', '', '')
+  if os == 'Linux'
+    let g:neocomplcache_temporary_dir = '/dev/shm/.yd-neocon'
+"  elseif os == 'Darwin' || os == 'Mac' || has('macunix')
+"    let g:neocomplcache_temporary_dir = '/Volumes/RamDisk/.yd-neocon'
+  endif
+endif
 
 """"""""""
 "" unite.vim
