@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 set -e
 
 usage() {
@@ -8,18 +8,20 @@ usage() {
     echo ""
     echo "Options:"
     echo "  -h, --help          show this help."
+    echo "  -v, --verbose       show detail commands."
     echo "  --dry               dry run mode."
     exit 1;
 }
 
 main() {
     script_dir=$(cd $(dirname $0); pwd)
-    opts=`getopt -o ho: -l help,option:,dry, -- "$@"`
+    opts=`getopt -o hvo: -l help,verbose,option:,dry, -- "$@"`
     eval set -- "$opts"
     while [ -n "$1" ]; do
         case $1 in
             -h|--help) usage;;
             -o|--option) option=$2; shift;;
+            -v|--verbose) is_verbose=1;;
             --dry) is_dry=1;;
             --) shift; break;;
             *) usage;;
@@ -40,8 +42,10 @@ run() {
     if [ $is_dry ]; then
         echo "[dry run] $@"
     else
-        echo "[run] $@"
-        "$@"
+        if [ $is_verbose ];then
+            echo "[run] $@"
+        fi
+        eval $@
     fi
 }
 
