@@ -75,6 +75,7 @@ augroup FileTypeSettings
     autocmd BufRead,BufNewFile Vagrantfile setfiletype ruby
     autocmd BufRead,BufNewFile *.md setfiletype markdown
     autocmd BufRead,BufNewFile *.twig setfiletype htmldjango
+    autocmd BufRead,BufNewFile *.twig if &filetype == 'twig' | set filetype=htmldjango | endif
     autocmd BufRead,BufNewFile *.less setfiletype less
 augroup END
 
