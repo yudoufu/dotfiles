@@ -1,3 +1,5 @@
+[ $(which screen 2>/dev/null) ] && [ $STY ] || exec screen -xRR
+
 # Path to your oh-my-zsh configuration.
 export ZSH=$HOME/.oh-my-zsh
 
@@ -47,4 +49,3 @@ bindkey "^N" history-beginning-search-forward-end
 
 # include local specific settings if exist.
 [ -f ~/.zsh_local ] && source ~/.zsh_local
-
