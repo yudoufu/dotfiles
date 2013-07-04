@@ -1,4 +1,6 @@
-[ $(which screen 2>/dev/null) ] && [ $STY ] || exec screen -xRR
+if [ "$(uname)" != "Darwin" ] && [ $(which screen 2>/dev/null) ] && [ ! $STY ]; then
+    exec screen -xRR
+fi
 
 # Path to your oh-my-zsh configuration.
 export ZSH=$HOME/.oh-my-zsh
