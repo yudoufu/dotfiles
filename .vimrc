@@ -86,7 +86,7 @@ if s:nosudo
 endif
 
 " Load Plugins on other sites
-NeoBundle 'git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex'
+"NeoBundle 'git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex'
 
 filetype plugin indent on
 
