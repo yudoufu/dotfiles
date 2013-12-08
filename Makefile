@@ -10,6 +10,8 @@ PYENV_VENV_PATH=$(PYENV_PATH)/plugins/python-virtualenv
 RBENV_PATH=$(PREFIX)/.rbenv
 RBENV_BUILD_PATH=$(RBENV_PATH)/plugins/ruby-build
 PLENV_PATH=$(PREFIX)/.plenv
+PHPENV_PATH=$(PREFIX)/.phpenv
+PHPENV_BUILD_PATH=$(PREFIX)/.phpenv/plugins/php-build
 
 PROCESSERS=node ruby python perl
 NODE_VERSION=0.10.2
@@ -116,6 +118,12 @@ plenv-install:
 	git clone git://github.com/tokuhirom/plenv.git $(PLENV_PATH)
 	echo 'export PATH="$(PLENV_PATH)/bin:$$PATH"' >> $(LOCAL_PROFILE)
 	echo 'eval "$$(plenv init -)"' >> $(LOCAL_PROFILE)
+
+phpenv-install:
+	curl https://raw.github.com/CHH/phpenv/master/bin/phpenv-install.sh | bash
+	git clone git://github.com/CHH/php-build.git $(PHPENV_BUILD_PATH)
+	echo 'export PATH="$(PHPENV_PATH)/bin:$$PATH"' >> $(LOCAL_PROFILE)
+	echo 'eval "$$(phpenv init -)"' >> $(LOCAL_PROFILE)
 
 otherenv:
 	echo 'export MAKEOPTS="-j $(shell expr `cat /proc/cpuinfo |grep processor |wc -l` + 2)"' >> $(LOCAL_PROFILE)

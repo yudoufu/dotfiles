@@ -61,6 +61,10 @@ green() {
     echo -n "[1;32m$1[0m"
 }
 
+gray() {
+    echo -n "[1;30m$1[0m"
+}
+
 fatal() {
     red "[fatal] "
     echo "$1"
@@ -74,6 +78,13 @@ warn() {
 info() {
     green "[info] "
     echo "$1"
+}
+
+debug() {
+    if [ $is_dry ] || [ $is_verbose ];then
+        gray "[debug] "
+        echo "$1"
+    fi
 }
 
 # call main.
