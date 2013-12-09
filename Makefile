@@ -50,7 +50,7 @@ endif
 
 update: $(foreach target, $(LANGENV), $(target)-update)
 
-setup: otherenv langenv lang
+setup: otherenv git-highlight-install langenv lang
 
 langenv: $(foreach target, $(LANGENV), $(target)-install)
 
@@ -126,4 +126,12 @@ phpenv-install:
 	echo 'eval "$$(phpenv init -)"' >> $(LOCAL_PROFILE)
 
 otherenv:
+	mkdir $(HOME)/bin
+	echo 'export PATH="$$HOME/bin:$$PATH" >> $(LOCAL_PROFILE)
 	echo 'export MAKEOPTS="-j $(shell expr `cat /proc/cpuinfo |grep processor |wc -l` + 2)"' >> $(LOCAL_PROFILE)
+
+git-highlight-install:
+	cd $(HOME)/bin;\
+		curl -O https://raw.github.com/git/git/master/contrib/diff-highlight/diff-highlight &&\
+		chmod +x diff-highlight
+
