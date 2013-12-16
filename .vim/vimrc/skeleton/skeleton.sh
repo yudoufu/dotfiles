@@ -87,5 +87,20 @@ debug() {
     fi
 }
 
+is_absolute() {
+    local path=$(echo $1)
+    [ "${path:0:1}" = "/" ]
+    return $?
+}
+
+resolve_path() {
+    local path=$1
+    if is_absolute $path; then
+        echo $(echo $path)
+    else
+        echo $(echo `pwd`/$path)
+    fi
+}
+
 # call main.
 main "$@"
