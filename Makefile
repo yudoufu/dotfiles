@@ -129,7 +129,7 @@ phpenv-install:
 
 otherenv:
 	mkdir -p $(HOME)/bin
-	echo 'export PATH="$$HOME/bin:$$PATH" >> $(LOCAL_PROFILE)
+	echo 'export PATH="$$HOME/bin:$$PATH"' >> $(LOCAL_PROFILE)
 	echo 'export MAKEOPTS="-j $(shell expr `cat /proc/cpuinfo |grep processor |wc -l` + 2)"' >> $(LOCAL_PROFILE)
 
 git-highlight-install:

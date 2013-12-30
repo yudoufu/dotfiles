@@ -1,8 +1,7 @@
 --- 
 gem: --no-ri --no-rdoc --no-user-install
 :sources: 
-- http://rubygems.org/
-- http://gems.github.com
+- https://rubygems.org/
 - http://gems.github.com
 :benchmark: false
 :backtrace: false
