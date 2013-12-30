@@ -3,21 +3,22 @@ PLATFORM=$(shell uname)
 
 LOCAL_PROFILE=$(PREFIX)/.zsh_local
 
-LANGENV=nvm pyenv rbenv plenv
+LANGENV=pyenv rbenv plenv nvm
 NVM_PATH=$(PREFIX)/.nvm
 PYENV_PATH=$(PREFIX)/.pyenv
 PYENV_VENV_PATH=$(PYENV_PATH)/plugins/python-virtualenv
 RBENV_PATH=$(PREFIX)/.rbenv
 RBENV_BUILD_PATH=$(RBENV_PATH)/plugins/ruby-build
 PLENV_PATH=$(PREFIX)/.plenv
+PLENV_BUILD_PATH=$(PLENV_PATH)/plugins/perl-build
 PHPENV_PATH=$(PREFIX)/.phpenv
 PHPENV_BUILD_PATH=$(PREFIX)/.phpenv/plugins/php-build
 
-PROCESSERS=node ruby python perl
-NODE_VERSION=0.10.2
-PYTHON_VERSION=2.7.4
-RUBY_VERSION=1.9.3-p362
-PERL_VERSION=5.16.2
+PROCESSERS=ruby python perl node
+NODE_VERSION=0.10.20
+PYTHON_VERSION=3.3.2
+RUBY_VERSION=2.0.0-p247
+PERL_VERSION=5.18.1
 
 all: self-update symlink git-update vim-plugin
 
@@ -116,6 +117,7 @@ plenv-update:
 
 plenv-install:
 	git clone git://github.com/tokuhirom/plenv.git $(PLENV_PATH)
+	git clone git://github.com/tokuhirom/Perl-Build.git $(PLENV_BUILD_PATH)
 	echo 'export PATH="$(PLENV_PATH)/bin:$$PATH"' >> $(LOCAL_PROFILE)
 	echo 'eval "$$(plenv init -)"' >> $(LOCAL_PROFILE)
 
@@ -126,7 +128,7 @@ phpenv-install:
 	echo 'eval "$$(phpenv init -)"' >> $(LOCAL_PROFILE)
 
 otherenv:
-	mkdir $(HOME)/bin
+	mkdir -p $(HOME)/bin
 	echo 'export PATH="$$HOME/bin:$$PATH" >> $(LOCAL_PROFILE)
 	echo 'export MAKEOPTS="-j $(shell expr `cat /proc/cpuinfo |grep processor |wc -l` + 2)"' >> $(LOCAL_PROFILE)
 

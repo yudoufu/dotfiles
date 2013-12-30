@@ -22,7 +22,7 @@ export ZSH_THEME="lukerandall"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git svn django)
+plugins=(gnu-utils git svn django)
 
 source $ZSH/oh-my-zsh.sh
 
