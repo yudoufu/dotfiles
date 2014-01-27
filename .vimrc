@@ -57,6 +57,7 @@ NeoBundle 'Shougo/vimproc', {
 \   },
 \ }
 NeoBundle 'Shougo/neosnippet'
+NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'thinca/vim-ref'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'kana/vim-vspec'
