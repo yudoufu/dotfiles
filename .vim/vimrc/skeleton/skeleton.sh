@@ -87,6 +87,12 @@ debug() {
     fi
 }
 
+is_numeric() {
+    local value=$1
+    expr "$value" : "[0-9]*" > /dev/null
+    return $?
+}
+
 is_absolute() {
     local path=$(echo $1)
     [ "${path:0:1}" = "/" ]
