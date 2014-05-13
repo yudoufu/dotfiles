@@ -48,6 +48,7 @@ if s:nosudo
     NeoBundle 'Shougo/unite.vim'
     NeoBundle 'Shougo/vimshell'
 endif
+NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'Shougo/vimproc', {
 \ 'build' : {
 \     'windows' : 'echo "Sorry, cannot update vimproc binary file in Windows."',
