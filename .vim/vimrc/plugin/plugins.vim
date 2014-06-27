@@ -1,5 +1,18 @@
-" neocomplcache
+""""""""""
+"" neocomplcache
+""""""""""
 let g:neocomplcache_enable_at_startup = 1
+
+" Use smartcase
+let g:neocomplcache_enable_smart_case = 1
+
+" _(アンダースコア)区切りの補完を有効化
+let g:neocomplcache_enable_underbar_completion = 1
+" 大文字区切りの補完を有効化
+let g:neocomplcache_enable_camel_case_completion  =  1
+
+" シンタックスをキャッシュする時の最小文字数
+let g:neocomplcache_min_syntax_length = 4
 
 "自動補完を行う入力数を設定。初期値は2
 let g:neocomplcache_auto_completion_start_length = 4
@@ -7,16 +20,28 @@ let g:neocomplcache_auto_completion_start_length = 4
 " ポップアップメニューで表示される候補の数。初期値は100
 let g:neocomplcache_max_list = 20
 
-" _(アンダースコア)区切りの補完を有効化
-let g:neocomplcache_enable_underbar_completion = 1
-let g:neocomplcache_enable_camel_case_completion  =  1
+"" key mapping
+" スニペットを展開
+imap <C-k> <Plug>(neocomplcache_snippets_expand)
+smap <C-k> <Plug>(neocomplcache_snippets_expand)
+" 補完をundoする
+inoremap <expr><C-g> neocomplcache#undo_completion()
+" 候補のなかで共通する部分までを補完する
+inoremap <expr><C-l> neocomplcache#complete_common_string()
 
 " 改行で補完ウィンドウを閉じる
 inoremap <expr><CR> neocomplcache#smart_close_popup() . "\<CR>"
 
 " tabで補完候補の選択を行う
-inoremap <expr><TAB> pumvisible() ? "\<Down>" : "\<TAB>"
-inoremap <expr><S-TAB> pumvisible() ? "\<Up>" : "\<S-TAB>"
+inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
+
+" <C-h>, <BS>: close popup and delete backword char.
+inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
+inoremap <expr><C-y> neocomplcache#close_popup()
+inoremap <expr><C-e> neocomplcache#cancel_popup()
+
 
 """"""""""
 "" unite.vim
