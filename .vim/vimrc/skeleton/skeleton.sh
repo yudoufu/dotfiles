@@ -14,6 +14,7 @@ usage() {
 }
 
 main() {
+    real_script_dir=$(dirname $(readlink -f $0))
     script_dir=$(cd $(dirname $0); pwd)
     opts=`getopt -o hvo: -l help,verbose,option:,dry, -- "$@"`
     eval set -- "$opts"
@@ -84,6 +85,22 @@ debug() {
     if [ $is_dry ] || [ $is_verbose ];then
         gray "[debug] "
         echo "$1"
+    fi
+}
+
+success() {
+    echo "[ $(green OK) ] $1"
+}
+
+failure() {
+    echo "[ $(red NG) ] $1"
+}
+
+judge() {
+    if [ $1 -eq 0 ];then
+        success $2
+    else
+        failure $2
     fi
 }
 
