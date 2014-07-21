@@ -101,16 +101,29 @@ nnoremap <silent> ,ss <S-v>:VimShellSendString<CR>
 """""""
 "" quickrun
 """""""
-
 let g:quickrun_config = {}
+
+let g:quickrun_config['_'] = {
+      \ 'outputter/buffer/split': ':botright 6',
+      \ 'outputter/buffer/close_on_empty': 1,
+      \ 'runner': 'vimproc',
+      \ 'runner/vimproc/updatetime': '10'
+      \}
+
+" ,eで実行
+nnoremap <silent> ,e :QuickRun<CR>
+" C-cでquickrunを強制終了する
+nnoremap <expr><silent> <C-c> quickrun#is_running() ? quickrun#sweep_sessions() : "\<C-c>"
+
+"" unit test
 let g:quickrun_config['php.unit']    = {'command': 'testrunner', 'cmdopt': 'phpunit'}
 let g:quickrun_config['python.unit'] = {'command': 'nosetests', 'cmdopt': '-v -s'}
 " let g:quickrun_config['python.pytest'] = {'command': 'py.test', 'cmdopt': '-v'}
 let g:quickrun_config['ruby.rspec']  = {'command': 'rspec', 'cmdopt': '-f d'}
 
-nnoremap <silent> <SPACE>r :QuickRun -mode n -runner vimproc:updatetime=5<CR>
-vnoremap <silent> <SPACE>r :QuickRun -mode v -runner vimproc:updatetime=5<CR>
-nnoremap <silent> ,r :QuickRun -mode n -runner vimproc:updatetime=5 -hook/unittest/enable 1<CR>
+nnoremap <silent> <SPACE>r :QuickRun -mode n<CR>
+vnoremap <silent> <SPACE>r :QuickRun -mode v<CR>
+nnoremap <silent> ,r :QuickRun -mode n -hook/unittest/enable 1<CR>
 
 augroup QuickRunUnitTest
   autocmd!
