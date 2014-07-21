@@ -2,14 +2,24 @@ set shiftwidth=4
 set tabstop=4
 set noexpandtab
 
-" :Fmt などで gofmt の代わりに goimports を使う
-let g:gofmt_command = 'goimports'
+"" vim-go settings
+let g:go_play_open_browser = 0
+let g:go_fmt_fail_silently = 1
+let g:go_snippet_engine = "neosnippet"
 
-" Go に付属の plugin と gocode を有効にする
-set rtp+=$GOROOT/misc/vim
-set rtp+=$GOPATH/src/github.com/nsf/gocode/vim
+"" vim-go keymap
+autocmd FileType go nmap <Leader>i <Plug>(go-info)
+autocmd FileType go nmap <Leader>gd <Plug>(go-doc)
+autocmd FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
+autocmd FileType go nmap <Leader>gb <Plug>(go-doc-browser)
 
-" 保存時に :Fmt する
-"autocmd BufWritePre *.go Fmt
-autocmd FileType go :compiler go
+autocmd FileType go nmap <Leader>r <Plug>(go-run)
+autocmd FileType go nmap <Leader>b <Plug>(go-build)
+autocmd FileType go nmap <Leader>t <Plug>(go-test)
+
+autocmd FileType go nmap <Leader>gd <Plug>(go-def)
+
+autocmd FileType go nmap <Leader>ds <Plug>(go-def-split)
+autocmd FileType go nmap <Leader>dv <Plug>(go-def-vertical)
+autocmd FileType go nmap <Leader>dt <Plug>(go-def-tab)
 
