@@ -77,7 +77,9 @@ NeoBundle 'vim-perl/vim-perl'
 NeoBundle 'groenewege/vim-less'
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'StanAngeloff/php.vim'
-NeoBundle 'fatih/vim-go'
+if executable('go')
+    NeoBundle 'fatih/vim-go'
+endif
 
 "" color schema
 NeoBundle 'w0ng/vim-hybrid'
