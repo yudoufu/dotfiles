@@ -4,6 +4,7 @@ set noexpandtab
 
 "" vim-go settings
 let g:go_play_open_browser = 0
+let g:go_fmt_command = "gofmt"
 let g:go_fmt_fail_silently = 1
 let g:go_snippet_engine = "neosnippet"
 

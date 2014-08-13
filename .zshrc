@@ -49,6 +49,7 @@ bindkey "^P" history-beginning-search-backward-end
 bindkey "^N" history-beginning-search-forward-end
 
 export GOPATH="$HOME/opt/go"
+export PATH=$PATH:$GOPATH/bin
 
 # include local specific settings if exist.
 [ -f ~/.zsh_local ] && source ~/.zsh_local
