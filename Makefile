@@ -134,6 +134,6 @@ otherenv:
 
 git-highlight-install:
 	cd $(HOME)/bin;\
-		curl -O https://raw.github.com/git/git/master/contrib/diff-highlight/diff-highlight &&\
+		curl -O https://raw.githubusercontent.com/git/git/master/contrib/diff-highlight/diff-highlight &&\
 		chmod +x diff-highlight
 
