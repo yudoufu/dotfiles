@@ -2,6 +2,8 @@ set shiftwidth=4
 set tabstop=4
 set noexpandtab
 
+nnoremap <silent> ,gr :GoRun<CR>
+
 "" vim-go settings
 let g:go_play_open_browser = 0
 let g:go_fmt_command = "gofmt"
