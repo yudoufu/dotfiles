@@ -52,7 +52,8 @@ autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "norm
 " View window Settings
 """""
 set list
-set listchars=tab:\ \ ,trail:\ ,extends:>
+set listchars=tab:>\ ,trail:\ ,extends:>
+"set listchars=tab:\ \ ,trail:\ ,extends:>
 set number
 set showmatch
 set hlsearch

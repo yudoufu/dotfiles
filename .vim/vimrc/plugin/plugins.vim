@@ -104,6 +104,9 @@ nnoremap <silent> ,ss <S-v>:VimShellSendString<CR>
 let g:quickrun_config = {}
 
 let g:quickrun_config['_'] = {
+      \ 'outpuuter': 'error',
+      \ 'outputter/error': 'quickfix',
+      \ 'outputter/error/success': 'buffer',
       \ 'outputter/buffer/split': ':botright 6',
       \ 'outputter/buffer/close_on_empty': 1,
       \ 'runner': 'vimproc',
