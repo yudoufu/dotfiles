@@ -15,10 +15,10 @@ PHPENV_PATH=$(PREFIX)/.phpenv
 PHPENV_BUILD_PATH=$(PREFIX)/.phpenv/plugins/php-build
 
 PROCESSERS=ruby python perl node
-NODE_VERSION=0.10.20
-PYTHON_VERSION=3.3.2
-RUBY_VERSION=2.0.0-p247
-PERL_VERSION=5.18.1
+NODE_VERSION=0.10.33
+PYTHON_VERSION=3.4.2
+RUBY_VERSION=2.1.4
+PERL_VERSION=5.21.5
 
 all: self-update symlink git-update vim-plugin
 
