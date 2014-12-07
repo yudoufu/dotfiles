@@ -28,6 +28,7 @@
 "
 " vim Filetype Settings Dir
 " .vim/bundle/vimrc/ftplugin
+" .vim/bundle/vimrc/after/ftplugin
 """""
 
 let s:nosudo = $SUDO_USER == ''
@@ -68,6 +69,7 @@ NeoBundle 'sjl/gundo.vim'
 NeoBundle 'heavenshell/vim-quickrun-hook-unittest'
 NeoBundle 'nvie/vim-flake8'
 NeoBundle 'mileszs/ack.vim'
+NeoBundle 'Shougo/vinarise.vim'
 
 "" lang plugins
 NeoBundle 'kana/vim-vspec'
@@ -77,7 +79,7 @@ NeoBundle 'vim-perl/vim-perl'
 NeoBundle 'groenewege/vim-less'
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'StanAngeloff/php.vim'
-NeoBundle 'kana/vim-filetype-haskell'
+"NeoBundle 'kana/vim-filetype-haskell'
 if executable('go')
     NeoBundle 'fatih/vim-go'
 endif
