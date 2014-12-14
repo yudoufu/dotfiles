@@ -2,13 +2,15 @@ set shiftwidth=4
 set tabstop=4
 set noexpandtab
 
-nnoremap <silent> ,gr :GoRun<CR>
+" nnoremap <silent> ,gr :GoRun<CR>
 
 "" vim-go settings
 let g:go_play_open_browser = 0
 let g:go_fmt_command = "gofmt"
 let g:go_fmt_fail_silently = 1
 let g:go_snippet_engine = "neosnippet"
+
+let mapleader = ","
 
 "" vim-go keymap
 autocmd FileType go nmap <Leader>i <Plug>(go-info)
