@@ -1,6 +1,6 @@
 [submodule ".oh-my-zsh"]
 	path = .oh-my-zsh
 	url = git://github.com/robbyrussell/oh-my-zsh.git
-[submodule ".vim/neobundle.vim"]
-	path = .vim/neobundle.vim
+[submodule ".vim/bundle/neobundle.vim"]
+	path = .vim/bundle/neobundle.vim
 	url = git://github.com/Shougo/neobundle.vim.git

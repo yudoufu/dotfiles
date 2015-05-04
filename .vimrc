@@ -33,12 +33,14 @@
 
 let s:nosudo = $SUDO_USER == ''
 
-" Load neobundle
 filetype plugin indent off
 if has('vim_starting')
-    set runtimepath+=~/.vim/neobundle.vim
-    call neobundle#rc(expand('~/.vim/bundle/'))
+    set runtimepath+=~/.vim/bundle/neobundle.vim
 endif
+
+" Load neobundle
+call neobundle#begin(expand('~/.vim/bundle/'))
+NeoBundleFetch 'Shougo/neobundle.vim'
 
 " Load Self Plugin
 NeoBundle 'vimrc', {'type': 'nosync'}
@@ -101,5 +103,7 @@ endif
 " Load Plugins on other sites
 "NeoBundle 'git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex'
 
+call neobundle#end()
 filetype plugin indent on
 
+NeoBundleCheck
