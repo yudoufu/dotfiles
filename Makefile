@@ -39,9 +39,20 @@ git-update:
 	git submodule update --init
 	git submodule foreach 'git checkout master; git pull'
 
+.PHONY: vim-neobundle-update vim-plugin
 BUNDLE_DIR=$(CURDIR)/.vim/bundle
-vim-plugin:
+NEOBUNDLE_DIR=$(BUNDLE_DIR)/neobundle.vim
+
+$(BUNDLE_DIR):
 	mkdir -p $(BUNDLE_DIR)
+
+$(NEOBUNDLE_DIR):
+	git clone https://github.com/Shougo/neobundle.vim $(NEOBUNDLE_DIR)
+
+vim-neobundle-update: $(NEOBUNDLE_DIR)
+	cd $(BUNDLE_DIR)/neobundle.vim; git pull
+
+vim-plugin: $(BUNDLE_DIR) $(NEOBUNDLE_DIR) vim-neobundle-update
 	ln -fvs ../vimrc $(BUNDLE_DIR)/
 ifeq ($(PLATFORM), Darwin)
 	vim -Nes -u $(CURDIR)/.vimrc -i NONE -V1 -c NeoBundleInstall! -c qall! ; /usr/bin/true
