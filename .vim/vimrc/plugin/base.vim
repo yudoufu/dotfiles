@@ -40,10 +40,9 @@ set wrapscan
 set hidden
 " 編集中のファイルが外部のエディタから変更された場合には、自動で読み直し
 set autoread
+" 編集中のファイルがあるディレクトリに移動
+set autochdir
 " 親ディレクトリをあさってtagsを探し出し、ctagsを有効にする
-if has('autochdir')
-  set autochdir
-endif
 set tags+=tags;
 "set tags+=./**/tags "サブディレクトリ以下のctagsも探す
 
