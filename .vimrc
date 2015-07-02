@@ -88,6 +88,7 @@ endif
 NeoBundle 'dag/vim2hs'
 NeoBundle 'eagletmt/ghcmod-vim'
 NeoBundle 'eagletmt/neco-ghc'
+NeoBundle 'derekwyatt/vim-scala'
 
 "" color schema
 NeoBundle 'w0ng/vim-hybrid'
