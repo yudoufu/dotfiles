@@ -72,6 +72,7 @@ NeoBundle 'heavenshell/vim-quickrun-hook-unittest'
 NeoBundle 'nvie/vim-flake8'
 NeoBundle 'mileszs/ack.vim'
 NeoBundle 'Shougo/vinarise.vim'
+NeoBundle 'jiangmiao/auto-pairs'
 
 "" lang plugins
 NeoBundle 'kana/vim-vspec'
@@ -80,6 +81,7 @@ NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'vim-perl/vim-perl'
 NeoBundle 'groenewege/vim-less'
 NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'mxw/vim-jsx'
 NeoBundle 'StanAngeloff/php.vim'
 "NeoBundle 'kana/vim-filetype-haskell'
 if executable('go')
