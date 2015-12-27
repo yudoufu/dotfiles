@@ -17,9 +17,11 @@
   show = ~/bin/diff-highlight | less
   diff = ~/bin/diff-highlight | less
 [filter "lfs"]
-	clean = git-lfs clean %f
-	smudge = git-lfs smudge %f
-	required = true
+  clean = git-lfs clean %f
+  smudge = git-lfs smudge %f
+  required = true
 [merge "mergepbx"]
   name = XCode project files merger
   driver = mergepbx %O %A %B
+[init]
+  templatedir = ~/.gitconfig.d/templates
