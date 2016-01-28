@@ -83,6 +83,7 @@ NeoBundle 'groenewege/vim-less'
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'mxw/vim-jsx'
 NeoBundle 'StanAngeloff/php.vim'
+NeoBundle 'toyamarinyon/vim-swift'
 "NeoBundle 'kana/vim-filetype-haskell'
 if executable('go')
     NeoBundle 'fatih/vim-go'
