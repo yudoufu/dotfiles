@@ -75,7 +75,7 @@ set softtabstop=0
 augroup FileTypeSettings
     autocmd BufRead,BufNewFile Berksfile setfiletype ruby
     autocmd BufRead,BufNewFile Vagrantfile setfiletype ruby
-    autocmd BufRead,BufNewFile *.md setfiletype markdown
+    autocmd BufRead,BufNewFile *.md,*.markdown setlocal filetype=ghmarkdown
     autocmd BufRead,BufNewFile *.twig setfiletype htmldjango
     autocmd BufRead,BufNewFile *.twig if &filetype == 'twig' | set filetype=htmldjango | endif
     autocmd BufRead,BufNewFile *.less setfiletype less

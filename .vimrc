@@ -77,6 +77,7 @@ NeoBundle 'jiangmiao/auto-pairs'
 "" lang plugins
 NeoBundle 'kana/vim-vspec'
 NeoBundle 'tpope/vim-markdown'
+NeoBundle 'jtratner/vim-flavored-markdown'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'vim-perl/vim-perl'
 NeoBundle 'groenewege/vim-less'
