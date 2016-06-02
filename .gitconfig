@@ -8,6 +8,7 @@
   graph = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
   gall = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
   local-prune = "!git branch --merged master | grep -v '^*\\| master$' | xargs git branch -d"
+  remote-prune = "!echo 'target remote branches:'; git branch -r --merged origin/master | grep -v origin/master | grep -v origin/develop | sed -e 's:origin/::' && echo 'DELETE merged remote branches. OK??[y/N]';read YN;[[ $YN =~ ^([yY][eE][sS]|[yY])$  ]] && git branch -r --merged origin/master | grep -v origin/master | grep -v origin/develop | sed -e 's:origin/::' | xargs -I% git push origin --delete %"
 [color]
   status = auto
   diff = auto
