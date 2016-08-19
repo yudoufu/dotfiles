@@ -148,3 +148,4 @@ git-highlight-install:
 		curl -O https://raw.githubusercontent.com/git/git/master/contrib/diff-highlight/diff-highlight &&\
 		chmod +x diff-highlight
 
+.DEFAULT_GOAL := all
