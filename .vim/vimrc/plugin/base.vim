@@ -80,6 +80,7 @@ augroup FileTypeSettings
     autocmd BufRead,BufNewFile *.twig if &filetype == 'twig' | set filetype=htmldjango | endif
     autocmd BufRead,BufNewFile *.less setfiletype less
     autocmd BufRead,BufNewFile *.go setfiletype go
+    autocmd BufRead,BufNewFile *.nas setfiletype nasm
 augroup END
 
 """""
