@@ -14,10 +14,13 @@
   diff = auto
 [core]
   pager = "less -R"
-[pager]
-  log = ~/bin/diff-highlight | less
-  show = ~/bin/diff-highlight | less
-  diff = ~/bin/diff-highlight | less
+  preloadindex = true
+  quotepath = false
+  excludesfile = ~/.gitconfig.d/ignores
+#[pager]
+#  log = ~/bin/diff-highlight | less
+#  show = ~/bin/diff-highlight | less
+#  diff = ~/bin/diff-highlight | less
 [filter "lfs"]
   clean = git-lfs clean %f
   smudge = git-lfs smudge %f

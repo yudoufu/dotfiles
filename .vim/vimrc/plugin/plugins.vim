@@ -161,3 +161,14 @@ let g:Tex_CompileRule_dvi = 'platex --interaction=nonstopmode $*'
 let g:Tex_CompileRule_pdf = 'dvipdfmx $*.dvi'
 let g:Tex_FormatDependency_pdf = 'dvi,pdf'
 
+"""""""
+"" vim-latex
+"""""""
+
+nnoremap <C-g> :Gtags -g <C-r><C-w><CR>
+nnoremap <C-h> :Gtags -f %<CR>
+nnoremap <C-j> :Gtags <C-r><C-w><CR>
+nnoremap <C-k> :Gtags -r <C-r><C-w><CR>
+nnoremap <C-l> :GtagsCursor<CR>
+nnoremap <C-n> :cn<CR>
+nnoremap <C-p> :cp<CR>

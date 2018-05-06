@@ -19,3 +19,7 @@ noremap ; :
 noremap : ;
 
 
+"""""
+" QuickFix
+"""""
+nnoremap <C-q> :cclose<CR>

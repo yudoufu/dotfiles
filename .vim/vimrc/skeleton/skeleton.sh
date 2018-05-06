@@ -14,21 +14,19 @@ usage() {
 }
 
 main() {
-    real_script_dir=$(dirname $(readlink -f $0))
     script_dir=$(cd $(dirname $0); pwd)
-    opts=`getopt -o hvo: -l help,verbose,option:,dry, -- "$@"`
-    eval set -- "$opts"
-    while [ -n "$1" ]; do
+    declare -a argv=()
+    while (( $# > 0 )); do
         case $1 in
             -h|--help) usage;;
             -o|--option) option=$2; shift;;
-            -v|--verbose) is_verbose=1;;
             --dry) is_dry=1;;
-            --) shift; break;;
-            *) usage;;
+            -*) fatal "Unkown option: $1"; usage;;
+            *) argv=("${argv[@]}" "$1");;
         esac
         shift
     done
+    set -- "${argv[@]}"
 
     if [ $is_dry ];then
         info "dry run..."

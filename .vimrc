@@ -85,6 +85,7 @@ NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'mxw/vim-jsx'
 NeoBundle 'StanAngeloff/php.vim'
 NeoBundle 'toyamarinyon/vim-swift'
+NeoBundle 'leafgarland/typescript-vim'
 "NeoBundle 'kana/vim-filetype-haskell'
 if executable('go')
     NeoBundle 'fatih/vim-go'
@@ -93,6 +94,7 @@ NeoBundle 'dag/vim2hs'
 NeoBundle 'eagletmt/ghcmod-vim'
 NeoBundle 'eagletmt/neco-ghc'
 NeoBundle 'derekwyatt/vim-scala'
+"NeoBundle 'Shirk/vim-gas'
 
 "" color schema
 NeoBundle 'w0ng/vim-hybrid'
@@ -101,6 +103,7 @@ NeoBundle 'jpo/vim-railscasts-theme'
 " Load Plugins on vim.org
 NeoBundle 'django.vim'
 NeoBundle 'SQLUtilities'
+NeoBundle 'gtags.vim'
 if s:nosudo
     NeoBundle 'sudo.vim'
 endif
