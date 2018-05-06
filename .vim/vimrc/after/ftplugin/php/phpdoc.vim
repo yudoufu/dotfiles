@@ -9,5 +9,5 @@ let g:pdv_cfg_php4guess = 0
 
 " key settings
 "inoremap <C-I> <ESC>:call PhpDocSingle()<CR>i
-nnoremap <C-I> :call PhpDocSingle()<CR>
-vnoremap <C-I> :call PhpDocRange()<CR> 
+"nnoremap <C-I> :call PhpDocSingle()<CR>
+"vnoremap <C-I> :call PhpDocRange()<CR> 
