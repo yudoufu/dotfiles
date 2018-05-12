@@ -51,5 +51,11 @@ bindkey "^N" history-beginning-search-forward-end
 export GOPATH=$HOME/opt/go:$HOME/works/go
 export PATH=$HOME/opt/go/bin:$HOME/works/go/bin:$PATH
 
+# alias
+alias peco='peco --on-cancel=error'
+alias gist='gist -p'
+alias ghqp='cd $(ghq list --full-path | peco --prompt="ghq>" || pwd)'
+
+
 # include local specific settings if exist.
 [ -f ~/.zsh_local ] && source ~/.zsh_local
