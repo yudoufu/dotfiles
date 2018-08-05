@@ -457,7 +457,7 @@ pygments-parser|Pygments plug-in parser:\
 	:langmap=Mako\:.mao:\
 	:langmap=Mason\:.m.mhtml.mc.mi:\
 	:langmap=Matlab\:.m:\
-	:langmap=Modelica\:.mo:\
+#	:langmap=Modelica\:.mo:\
 	:langmap=Modula2\:.mod:\
 	:langmap=Monkey\:.monkey:\
 	:langmap=MoonScript\:.moon:\
