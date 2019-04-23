@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# this script checked only bash|zsh.
+
+for c in {000..255}
+do
+  printf "\e[38;5;${c}m $(printf %03d $c)"
+  [ $((($c + 1) % 16)) -eq 0 ] && printf "\n"
+done

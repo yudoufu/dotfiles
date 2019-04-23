@@ -1,0 +1,1 @@
+/Users/yudoufu/dotfiles/resources/zsh/.zsh.d

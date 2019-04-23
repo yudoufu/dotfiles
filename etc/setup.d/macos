@@ -1,0 +1,88 @@
+#!/bin/bash
+
+#####################
+# install brew
+# https://brew.sh/index_ja.html
+
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+#####################
+# key repeat & screenshot dir
+# require reboot.
+
+defaults write -g KeyRepeat -int 1
+defaults write -g InitialKeyRepeat -int 10
+defaults write com.apple.screencapture location ~/Downloads/screenshots
+killall SystemUIServer
+
+#####################
+# zsh install
+
+brew install zsh
+brew install zsh-completions
+
+sudo sh -c "echo '/usr/local/bin/zsh' >> /etc/shells"
+chsh -s /usr/local/bin/zsh
+
+# echo 'fpath=(/usr/local/share/zsh-completions $fpath)' >> ~/.zshrc
+# mkdir ~/.ssh && chmod 700 ~/.ssh
+
+# API rate limit exceeded for 対策
+# http://yudoufu.hatenablog.jp/entry/2016/06/09/011754 -> private repoを取得するためには、repo権限が必要。
+# https://rcmdnk.com/blog/2013/12/05/mac-homebrew/
+
+brew install ghq
+brew install peco
+brew install go
+brew install jq
+brew install the_silver_searcher
+# brew install httpie
+brew install carthage
+brew install mysql --client-only
+brew install tree
+
+#####################
+# neovim
+
+brew install neovim
+brew install python3
+
+## sqlite が一緒に入るので
+# echo 'export PATH="/usr/local/opt/sqlite/bin:$PATH"' >> ~/.zshrc
+
+pip3 install neovim
+
+curl -O https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh
+sh installer.sh ~/.cache/dein
+
+:call dein#install()
+
+#####################
+# npm & xcenv
+
+brew install node
+npm install -g pure-prompt
+
+sudo gem install xcode-install
+brew install xcenv
+
+brew install swiftlint
+
+#####################
+## docker
+
+brew cask install docker
+open /Applications/Docker.app
+docker run hello-world
+
+brew tap caskroom/versions
+
+######################
+# GNU GLOBAL
+# https://gist.github.com/haru-ake/b2273492813360afa8f7b6d3dcecca21
+
+brew install --HEAD universal-ctags/universal-ctags/universal-ctags
+brew install global --with-pygments --with-sqlite3
+# cp /usr/local/etc/gtags.conf ~/.globalrc
+# export XCENV_DO_NOT_SHIM_LIST="ctags"
+
