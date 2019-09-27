@@ -17,7 +17,7 @@ Now it's working Mac only.(Probably work on some Linux distros.)
 ## Installation
 
 ```
-curl -L https://github.com/yudoufu/dotfiles/develop/install.sh | bash
+curl -L https://github.com/yudoufu/dotfiles/blob/develop/install.sh | bash
 ```
 
 ## License

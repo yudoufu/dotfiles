@@ -34,6 +34,9 @@ set fileformats=unix,dos,mac
 set history=999
 set nobackup
 
+"set verbosefile=/tmp/vim.log
+"set verbose=20
+
 """""
 " Status line
 
@@ -220,10 +223,23 @@ if dein#load_state(s:dein_dir)
   call dein#add('itchyny/lightline.vim')
   call dein#add('KeitaNakamura/neodark.vim')
 
+  " LSP plugins
+  call dein#add('prabirshrestha/async.vim')
+  call dein#add('prabirshrestha/vim-lsp')
+  call dein#add('prabirshrestha/asyncomplete.vim')
+  call dein#add('prabirshrestha/asyncomplete-lsp.vim')
+
   " Language plugins
   call dein#add('sophacles/vim-processing')
   call dein#add('fatih/vim-go')
   call dein#add('posva/vim-vue')
+  call dein#add('ryanolsonx/vim-lsp-typescript')
+  call dein#add('vim-scripts/Align')
+  call dein#add('vim-scripts/SQLUtilities')
+  call dein#add('ekalinin/Dockerfile.vim')
+
+  "environment
+  call dein#add('tpope/vim-fugitive')
 
   " Required:
   call dein#end()
@@ -287,6 +303,15 @@ if has('nvim')
   " neoterm
 
 endif
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Language Server
+let g:lsp_diagnostics_enabled = 1
+
+" debug
+let g:lsp_log_verbose = 1
+let g:lsp_log_file = expand('~/vim-lsp.log')
+let g:asyncomplete_log_file = expand('~/asyncomplete.log')
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Utility funcitons

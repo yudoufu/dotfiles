@@ -111,6 +111,17 @@ alias grep='grep --color=auto'
 $(which tree > /dev/null) && alias tall='tree -C -ugh'
 $(which nvim > /dev/null) && alias vi=nvim
 
+if $(which ghq > /dev/null) && $(which peco > /dev/null); then
+  function _peco-ghq() {
+    local args="$*"
+    local selected="$(ghq list | peco --prompt='ghq >' --query=$args)"
+    if [ -n "$selected" ];then
+      cd "$(ghq root)/$selected"
+    fi
+  }
+
+  alias ghqp=_peco-ghq
+fi
 
 # ----------------------------------------------------------------------------
 # Load modules (temporary write. TODO: move to modules each files.)
