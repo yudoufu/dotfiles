@@ -111,10 +111,27 @@ alias grep='grep --color=auto'
 $(which tree > /dev/null) && alias tall='tree -C -ugh'
 $(which nvim > /dev/null) && alias vi=nvim
 
+if $(which peco > /dev/null); then
+  function _peco-history() {
+    local tac
+    if which tac > /dev/null; then
+        tac="tac"
+    else
+        tac="tail -r"
+    fi
+    BUFFER=$(fc -l -n 1 | eval $tac | peco --prompt='history>' --query "$LBUFFER")
+    CURSOR=$#BUFFER
+    zle -R -c
+  }
+
+  zle -N _peco-history
+  bindkey '^R' _peco-history
+fi
+
 if $(which ghq > /dev/null) && $(which peco > /dev/null); then
   function _peco-ghq() {
     local args="$*"
-    local selected="$(ghq list | peco --prompt='ghq >' --query=$args)"
+    local selected="$(ghq list | peco --prompt='ghq>' --query=$args)"
     if [ -n "$selected" ];then
       cd "$(ghq root)/$selected"
     fi
