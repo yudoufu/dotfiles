@@ -240,6 +240,9 @@ if dein#load_state(s:dein_dir)
 
   "environment
   call dein#add('tpope/vim-fugitive')
+  call dein#add('tpope/vim-rhubarb')
+  call dein#add('shumphrey/fugitive-gitlab.vim')
+  call dein#add('tommcdo/vim-fubitive')
 
   " Required:
   call dein#end()

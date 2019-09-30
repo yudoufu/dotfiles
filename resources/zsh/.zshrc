@@ -119,7 +119,7 @@ if $(which peco > /dev/null); then
     else
         tac="tail -r"
     fi
-    BUFFER=$(fc -l -n 1 | eval $tac | peco --prompt='history>' --query "$LBUFFER")
+    BUFFER=$(fc -l -n 1 | eval $tac | awk '!a[$0]++'| peco --prompt='history>' --query "$LBUFFER")
     CURSOR=$#BUFFER
     zle -R -c
   }
