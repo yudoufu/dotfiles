@@ -274,7 +274,7 @@ let g:neodark#terminal_transparent = 1
 let g:neodark#use_custom_terminal_theme = 1
 let g:neodark#solid_vertsplit = 1
 
-"" My custome color highlight settings
+" My custome color highlight settings
 
 " 行末の空白とtabをハイライト
 "hi SpecialKey ctermfg=cyan ctermbg=DarkBlue
@@ -312,11 +312,12 @@ endif
 let g:lsp_diagnostics_enabled = 1
 
 " debug
-let g:lsp_log_verbose = 1
-let g:lsp_log_file = expand('~/vim-lsp.log')
-let g:asyncomplete_log_file = expand('~/asyncomplete.log')
+"let g:lsp_log_verbose = 1
+"let g:lsp_log_file = expand('~/vim-lsp.log')
+"let g:asyncomplete_log_file = expand('~/asyncomplete.log')
 
-" sudo gem install solargraph
+" Ruby
+" Requirement: sudo gem install solargraph
 if executable('solargraph')
     au User lsp_setup call lsp#register_server({
         \ 'name': 'solargraph',
@@ -326,6 +327,13 @@ if executable('solargraph')
         \ })
 endif
 
+" key bind for lsp
+nnoremap <silent> <Leader>d :LspDefinition<CR>
+nnoremap <silent> <Leader>p :LspHover<CR>
+nnoremap <silent> <Leader>r :LspReferences<CR>
+nnoremap <silent> <Leader>i :LspImplementation<CR>
+nnoremap <silent> <Leader>s :split \| :LspDefinition <CR>
+nnoremap <silent> <Leader>v :vsplit \| :LspDefinition <CR>
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
