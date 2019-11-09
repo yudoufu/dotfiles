@@ -229,11 +229,12 @@ if dein#load_state(s:dein_dir)
   call dein#add('prabirshrestha/asyncomplete.vim')
   call dein#add('prabirshrestha/asyncomplete-lsp.vim')
 
+  call dein#add('ryanolsonx/vim-lsp-typescript')
+
   " Language plugins
   call dein#add('sophacles/vim-processing')
   call dein#add('fatih/vim-go')
   call dein#add('posva/vim-vue')
-  call dein#add('ryanolsonx/vim-lsp-typescript')
   call dein#add('vim-scripts/Align')
   call dein#add('vim-scripts/SQLUtilities')
   call dein#add('ekalinin/Dockerfile.vim')
@@ -247,6 +248,7 @@ if dein#load_state(s:dein_dir)
   " Required:
   call dein#end()
   call dein#save_state()
+
 endif
 
 " If you want to install not installed plugins on startup.
@@ -264,12 +266,12 @@ filetype plugin indent on
 syntax on
 colorscheme neodark
 
-"" lightline
+" lightline
 let g:lightline = {
     \ 'colorscheme': 'neodark' ,
     \}
 
-"" neodark
+" neodark
 let g:neodark#terminal_transparent = 1
 let g:neodark#use_custom_terminal_theme = 1
 let g:neodark#solid_vertsplit = 1
@@ -312,9 +314,9 @@ endif
 let g:lsp_diagnostics_enabled = 1
 
 " debug
-"let g:lsp_log_verbose = 1
-"let g:lsp_log_file = expand('~/vim-lsp.log')
-"let g:asyncomplete_log_file = expand('~/asyncomplete.log')
+let g:lsp_log_verbose = 1
+let g:lsp_log_file = expand('~/vim-lsp.log')
+let g:asyncomplete_log_file = expand('~/asyncomplete.log')
 
 " Ruby
 " Requirement: sudo gem install solargraph

@@ -31,8 +31,11 @@ export LC_ALL=en_US.UTF-8
 export JLESSCHARSET=UTF-8
 export LV=-Ou8
 
-export EDITOR=vi
-export SVN_EDITOR=vi
+#export EDITOR=vi
+#export SVN_EDITOR=vi
+export EDITOR=nvim
+export SVN_EDITOR=nvim
+
 
 
 

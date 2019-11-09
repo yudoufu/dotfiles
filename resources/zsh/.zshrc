@@ -40,6 +40,11 @@ zstyle ':zle:*' word-style unspecified
 # ----------------------------------------------------------------------------
 # Completion Configuration
 
+
+## completion
+[ -d ~/.zsh.d/completion ] && fpath=($fpath ~/.zsh.d/completion)
+
+
 ## 引数の=等以降でもpathの補完を有効にする
 setopt magic_equal_subst
 
