@@ -22,5 +22,5 @@
 [init]
   templatedir = ~/.gitconfig.d/templates
 [ghq]
-  root = ~/.ghq
   root = ~/.go/src
+  root = ~/.ghq
