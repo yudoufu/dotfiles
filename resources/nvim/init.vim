@@ -238,12 +238,14 @@ if dein#load_state(s:dein_dir)
   call dein#add('vim-scripts/Align')
   call dein#add('vim-scripts/SQLUtilities')
   call dein#add('ekalinin/Dockerfile.vim')
+  call dein#add('leafgarland/typescript-vim')
 
   "environment
   call dein#add('tpope/vim-fugitive')
   call dein#add('tpope/vim-rhubarb')
   call dein#add('shumphrey/fugitive-gitlab.vim')
   call dein#add('tommcdo/vim-fubitive')
+  call dein#add('peitalin/vim-jsx-typescript')
 
   " Required:
   call dein#end()
