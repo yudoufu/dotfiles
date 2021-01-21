@@ -246,6 +246,7 @@ if dein#load_state(s:dein_dir)
   call dein#add('shumphrey/fugitive-gitlab.vim')
   call dein#add('tommcdo/vim-fubitive')
   call dein#add('peitalin/vim-jsx-typescript')
+  call dein#add('tpope/vim-surround')
 
   " Required:
   call dein#end()
