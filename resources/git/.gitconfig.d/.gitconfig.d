@@ -1,1 +1,0 @@
-/Users/yudoufu/dotfiles/resources/git/.gitconfig.d
