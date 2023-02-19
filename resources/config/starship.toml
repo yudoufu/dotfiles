@@ -1,0 +1,25 @@
+add_newline = true
+
+command_timeout = 10000
+
+format = """
+$directory $git_branch$git_status \\[$kubernetes $gcloud\\]
+$time $all"""
+
+[directory]
+truncation_length = 100
+truncate_to_repo = false
+
+[time]
+disabled = false
+format = "at [$time]($style)"
+time_format = "%F %T"
+
+[gcloud]
+format = 'on [$symbol$active(\($project\))]($style)'
+
+[kubernetes]
+disabled = false
+format = '[$symbol$context( \($namespace\))]($style)'
+[kubernetes.context_aliases]
+"gke_.*_(?P<cluster>[\\w-]+)" = "$cluster"

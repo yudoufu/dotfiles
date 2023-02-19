@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+set -eu
+
+arg=""; [ -p /dev/stdin ]; arg=$(cat /dev/stdin) || arg="$1"
+
+
+echo -n "${arg}" | awk -F"," '{ l = NULL; for (i = 1; i <= NF; i++) l = l ((i == 1) ? "" : ",") "\""$i"\""; print l }'
+

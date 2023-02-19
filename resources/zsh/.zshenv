@@ -36,7 +36,7 @@ export LV=-Ou8
 export EDITOR=nvim
 export SVN_EDITOR=nvim
 
-
+export GOPATH=$HOME/.go
 
 
 # ----------------------------------------------------------------------------
@@ -44,6 +44,7 @@ export SVN_EDITOR=nvim
 
 path=(
   /usr/local/opt/sqlite/bin
+  $GOPATH/bin
   $path
 )
 

@@ -1,3 +1,7 @@
 alias ls="ls -G"
 alias ll="ls -l"
 alias la="ls -a"
+
+if $(which code > /dev/null); then
+  alias code="code -r"
+fi

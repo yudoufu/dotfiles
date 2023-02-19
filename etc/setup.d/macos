@@ -35,22 +35,17 @@ chsh -s /usr/local/bin/zsh
 # brew install httpie
 
 #####################
-# anyenv
+# asdf
 
-anyenv install —init
-anyenv init
+echo -e ". $(brew --prefix asdf)/asdf.sh" >> ~/.zshrc.local
+source ~/.zshrc.local
 
-nyenv install rbenv
-anyenv install nodenv
-touch $(nodenv root)/default-packages
-anyenv install plenv
-anyenv install pyenv
-anyenv install phpenv
-
-mkdir -p $(anyenv root)/plugins
-git clone https://github.com/znz/anyenv-update.git $(anyenv root)/plugins/anyenv-update
-git clone https://github.com/znz/anyenv-git.git $(anyenv root)/plugins/anyenv-git
-
+for package in "golang ruby nodejs yarn python php perl terraform"
+do
+  asdf plugin add $package
+  asdf install $package latest
+  asdf global $package $(asdf list $package | tail -n 1)
+done
 
 #####################
 # neovim

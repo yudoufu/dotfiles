@@ -1,0 +1,1 @@
+/Users/daichikamemoto/.dotfiles/resources/zsh/.zsh.d

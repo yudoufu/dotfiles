@@ -100,14 +100,15 @@ bindkey '^s' history-incremental-pattern-search-forward
 # ----------------------------------------------------------------------------
 # Prompt
 
-## pure
-# https://github.com/zsh-users/zsh/tree/master/Functions/Prompts
-# https://github.com/sindresorhus/pure
-autoload -U promptinit
-promptinit
-prompt pure
-PURE_PROMPT_SYMBOL='%(?.%F{cyan}.%F{red})%#'
-PROMPT='%F{240}%D{%Y/%m/%f} %F{white}%* '$PROMPT
+# commented out because try to use starship
+# ## pure
+# # https://github.com/zsh-users/zsh/tree/master/Functions/Prompts
+# # https://github.com/sindresorhus/pure
+# autoload -U promptinit
+# promptinit
+# prompt pure
+# PURE_PROMPT_SYMBOL='%(?.%F{cyan}.%F{red})%#'
+# PROMPT='%F{240}%D{%Y/%m/%f} %F{white}%* '$PROMPT
 
 # ----------------------------------------------------------------------------
 # Common Aliases
@@ -145,14 +146,35 @@ if $(which ghq > /dev/null) && $(which peco > /dev/null); then
   alias ghqp=_peco-ghq
 fi
 
+#if $(which peco > /dev/null) && $(which gloud > /dev/null) && $(which kubectl > /dev/null); then
+#  function _select_gproject() {
+#    
+#  }
+#
+#  function _select_kube_context() {
+#    
+#  }
+#
+#  function _peco-gke() {
+#
+#  }
+#fi
+
 # ----------------------------------------------------------------------------
 # Load modules (temporary write. TODO: move to modules each files.)
 
 autoload -Uz zmv
 alias zmv='noglob zmv -W'
 
+
+# ----------------------------------------------------------------------------
+# Load starship
+
+eval "$(starship init zsh)"
+
 # ----------------------------------------------------------------------------
 # Plugin setttings
+
 
 ## System specified
 [ -f ~/.zshrc.${$(uname):l} ] && source ~/.zshrc.${$(uname):l}
@@ -163,3 +185,5 @@ alias zmv='noglob zmv -W'
 ## local only
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
 
+
+autoload -U +X bashcompinit && bashcompinit

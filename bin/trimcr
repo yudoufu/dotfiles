@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+arg=""; [ -p /dev/stdin ]; arg=$(cat /dev/stdin) || arg="$1"
+
+echo -n "${arg}" | tr -d '\r'
+

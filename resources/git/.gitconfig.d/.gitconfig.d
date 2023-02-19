@@ -1,0 +1,1 @@
+/Users/daichikamemoto/.dotfiles/resources/git/.gitconfig.d

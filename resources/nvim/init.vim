@@ -14,7 +14,6 @@
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Initialize
-
 " When started as "evim", evim.vim will already have done these settings.
 if v:progname =~? "evim"
   finish
@@ -108,10 +107,11 @@ augroup END
 nnoremap <ESC><ESC> :nohlsearch<CR><ESC>
 
 " □とか○の文字があってもカーソル位置がずれないようにする
-if exists('&ambiwidth')
-  set ambiwidth=double
+if !exists('g:vscode')
+  if exists('&ambiwidth')
+    set ambiwidth=double
+  endif
 endif
-
 
 """""
 " filetype Settings
@@ -229,7 +229,7 @@ if dein#load_state(s:dein_dir)
   call dein#add('prabirshrestha/asyncomplete.vim')
   call dein#add('prabirshrestha/asyncomplete-lsp.vim')
 
-  call dein#add('ryanolsonx/vim-lsp-typescript')
+  "call dein#add('ryanolsonx/vim-lsp-typescript')
 
   " Language plugins
   call dein#add('sophacles/vim-processing')
@@ -247,6 +247,7 @@ if dein#load_state(s:dein_dir)
   call dein#add('tommcdo/vim-fubitive')
   call dein#add('peitalin/vim-jsx-typescript')
   call dein#add('tpope/vim-surround')
+  call dein#add('cohama/lexima.vim')
 
   " Required:
   call dein#end()

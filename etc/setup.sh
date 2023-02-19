@@ -43,6 +43,7 @@ main() {
   setup_zsh
   setup_git
   setup_neovim
+  setup_config
   setup_misc
 }
 
@@ -75,6 +76,17 @@ setup_neovim() {
 
   run mkdir -p "$target_dir/.config"
   symlink "$source_dir" "$target_dir/.config/nvim"
+}
+
+setup_config() {
+  debug "Setup config files"
+
+  local target_dir="$HOME/.config"
+  local source_dir="$project_dir/resources/config"
+
+  run mkdir -p "$target_dir"
+
+  links "$source_dir" "$target_dir"
 }
 
 setup_misc() {

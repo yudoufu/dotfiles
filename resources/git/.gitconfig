@@ -2,14 +2,22 @@
   name = Daichi Kamemoto
   email = daikame@gmail.com
 [alias]
+  wt = worktree
+  sw = switch
+  sc = switch -c
+  rs = restore
   st = status
   co = checkout
   ci = commit
+  cp = cherry-pick
+  pf = push --force-with-lease --force-if-includes
+  rb = rebase --ff
   graph = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
   gall = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
   local-prune = "!git branch --merged master | grep -v '^*\\| master$' | grep -v 'develop$' | xargs git branch -d"
   remote-prune = "!echo 'target remote branches:'; git branch -r --merged origin/master | grep -v origin/master | grep -v origin/develop | sed -e 's:origin/::' && echo 'DELETE merged remote branches. OK??[y/N]';read YN;[[ $YN =~ ^([yY][eE][sS]|[yY])$  ]] && git branch -r --merged origin/master | grep -v origin/master | grep -v origin/develop | sed -e 's:origin/::' | xargs -I% git push origin --delete %"
-  pp = "!git pull --prune && git local-prune"
+  pp  = "!f(){ main=${1:-'master'}; git switch -q $main && git pull --prune && git local-prune; };f"
+  sqp = "!f(){ main=${1:-'master'}; git switch -q $main && git pull --prune && git for-each-ref refs/heads/ '--format=%(refname:short)' | while read branch; do mergeBase=$(git merge-base $main $branch) && [[ $(git cherry $main $(git commit-tree $(git rev-parse $branch\\^{tree}) -p $mergeBase -m _)) == '-'* ]] && git branch -D $branch; done;};f"
 [color]
   status = auto
   diff = auto
